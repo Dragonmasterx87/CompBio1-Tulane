@@ -1,7 +1,7 @@
 ---
 title: Day 2
 layout: page
-nav_order: 3
+nav_order: 4
 ---
 
 ## Day 2:
