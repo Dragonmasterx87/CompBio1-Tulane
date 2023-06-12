@@ -67,7 +67,7 @@ mario
 ```
 
 ## Dims
-You can transform an atomic vector into a complex n-dimensional array via the attribute `dim` 
+You can transform an atomic vector into a complex n-dimensional array via the attribute `dim`. This can be especially useful when organising and classifying datasets.
 
 ```
 # Lets check dim
@@ -80,6 +80,9 @@ dim(mario) <- (3, 4)
 dim(mario)
 ```
 ### Matrices
+Matrices store data in a 2-dimensional array. Similar to dimensions in `dim` we can allocate the number of rows using the `nrow` command in the function `matrix`.
+
+```
 
 ----
 
