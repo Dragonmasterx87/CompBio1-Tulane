@@ -40,7 +40,7 @@ print(charToRaw('hi!'))
 You can attach peices of info to atomic vectors, this can be information about the vectors itself and is helpful when classifying vector data. Think of this as "metadata"
 ```
 # Lets make a vector
-mario <- c("mario", "luigi", "peaches", "donkeykong", "browser", "toad", 'giuseppe", "koopa", "spike", "penguinking", "kamek", "goomba", "pirhanaplant")
+mario <- c("mario", "luigi", "peaches", "donkeykong", "browser", "toad", 'giuseppe", "koopa", "spike", "penguinking", "kamek", "goomba")
 
 # Check vector
 mario
@@ -53,11 +53,33 @@ attributes(mario)
 Most common metadata assigned to vectors are names, dimensions and classes. You can look up each of these attributes using helper functions, which looks for that specific attribute.
 ```
 # Check if mario has any name attributes assigned to it
-names(mario) <- c("good", "good", "good", "good", "villan", "good", "good", villan", "villan", "good", "good", "villan", "villan") 
+names(mario)
 
 # Lets assign names to mario vector
+# Remember that the metadata wont change if you change the actual data.
+names(mario) <- c("good", "good", "good", "good", "villan", "good", "good", villan", "villan", "good", "good", "villan") 
+
+# Check if mario has any name attributes assigned to it
+names(mario)
+
+# R also displays metadata when you look at the object
+mario
+```
+
+## Dims
+You can transform an atomic vector into a complex n-dimensional array via the attribute `dim` 
 
 ```
+# Lets check dim
+dim(mario)
+
+# Increase data dimensionality
+dim(mario) <- (3, 4)
+
+# Check data dimsnions now
+dim(mario)
+```
+### Matrices
 
 ----
 
