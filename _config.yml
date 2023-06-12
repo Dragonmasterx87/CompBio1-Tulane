@@ -9,5 +9,18 @@ enable_copy_code_button: true
 # URL
 url: https://dragonmasterx87.github.io/CompBio-Tulane
 
+defaults:
+  -
+    scope: {path: docs, type: pages}
+    values: {layout: default}
+  - 
+    scope: {path: "docs/index2"}
+    values: {nav_order: 2}
+  - 
+    scope: {path: "docs/index3"}
+    values: {nav_order: 3}
+  - 
+...
+
 aux_links:
   Template Repository: https://github.com/dragonmasterx87/CompBio-Tulane
