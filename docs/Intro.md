@@ -83,7 +83,93 @@ dim(mario)
 Matrices store data in a 2-dimensional array. Similar to dimensions in `dim` we can allocate the number of rows using the `nrow` command in the function `matrix`.
 
 ```
+# Lets add 2 rows
+mat <- matrix(mario, nrow = 2)
+mat
+```
+
+### Array
+This is a complex form of dataset organisation, where a dataset can be organised into a n-dimensional array. Think of a hypergeometric mode of data allocation, where you are storing data in the form of a complex hypercube of multiple dimensions. In this instance provide data in the first instance as a `vector` and dimensions as a `dim` in the the second instance.
+
+```
+# Lets create a hypergeometric array in the format of a hypercube
+ar <- array(c(1:4, 5:8, 9:12, 13:16, ), dim = c(2, 2, 3, 3))
+```
+
+### Class
+The class describes the format of data in R. You can check the `class` of data using the `class()` function.
+```
+class(mario)
+class(ar)
+```
+
+If a dataset doesnt have a class assigned to it, the `class()` function will default to the vector type and output what type of vector data exists.
+```
+class("hello there!")
+class(2019)
+```
+
+## Date & Time
+We can check date and time that has passed from 12:00 a.m. Jan. 1, 1970 `POSIXct`
+```
+time_now <- Sys.time()
+time_now
+
+typeof(time_now)
+
+class(time_now)
+```
+
+## Factors
+Factors are R’s way of storing categorical information, like ethnicity or eye color. Think of a factor as something like a sex; it can only have certain values (male or female), and these values may have their own idiosyncratic order. This arrangement makes factors very useful for recording the treatment levels of a study and other categorical variables.
+
+To make a factor, pass an atomic vector into the factor function. R will recode the data in the vector as integers and store the results in an integer vector. R will also add a levels attribute to the integer, which contains a set of labels for displaying the factor values, and a class attribute, which contains the class factor
+
+gender <- factor(c("male", "female", "female", "male"))
+
+```
+typeof(gender)
+## "integer"
+
+attributes(gender)
+## $levels
+## [1] "female" "male"  
+## 
+## $class
+## [1] "factor"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
