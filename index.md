@@ -11,26 +11,29 @@ In this workshop attendees will learn the basics of scRNAseq experimental design
 This workshop will outline the basics of R syntax and usage using R and the integrated developmental environment RStudio. This course is designed to be a basic introduction,
 where the fundamentals of scRNAseq analysis will be outlined. 
 
-### **Prerequisites**
+### Prerequisites
 _Nulla scientia necessaria_. It is expected that you have no prior coding eperience and want to learn how to analyze scRNAseq data from scratch, if you have coding experience then
 this course may act as a refresher to go over the basic workflow of Seurat. It is advised to bring your own laptop with a functional operating system so that you may follow the instructor's
 workflow.
 
-## **Learning Outline**
-### **Day 1**
+### Learning Outline
+#### Day 1
 1. Introduction to single cell RNA sequencing
 2. Experimental design
 3. Comparison of library preparation and sequencing platforms
 4. Overview of single-cell analysis using Seurat
 5. Installing R and basic syntax
  
-### **Day 2**
+#### Day 2
 1. Data loading/QC/filtering
 2. Normalization using VST and SC Transform
 3. Multidimensional reduction and cell clustering
 4. Differential testing framework
 5. Visualization
 6. Pitfalls, caveats, and future topics
+
+### Project
+In order to be eligible for the attendance certificate you must complete the project, dont worry at the end of this workshop you will be able to perform the necessry computation to complete this.
 
 
 ----
