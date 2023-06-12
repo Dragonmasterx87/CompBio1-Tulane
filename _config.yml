@@ -3,10 +3,6 @@ description: Welcome to the documentation for the Computation Biology 1 Workshop
 theme: just-the-docs
 color_scheme: dark
 
-layout: default
-title: Customization
-nav_order: 4
-
 url: https://dragonmasterx87.github.io/CompBio-Tulane
 
 aux_links:
