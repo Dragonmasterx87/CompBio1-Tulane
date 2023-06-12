@@ -14,14 +14,6 @@ In this workshop attendees will learn how to utilize the Seurat package in R to 
 3. Comparison of library preparation and sequencing platforms
 4. Overview of single-cell analysis using Seurat
 5. Installing R and basic syntax
- 
-## Day 2:
-1. Data loading/QC/filtering
-2. Normalization using VST and SC Transform
-3. Multidimensional reduction and cell clustering
-4. Differential testing framework
-5. Visualization
-6. Pitfalls, caveats, and future topics
 
 ----
 
