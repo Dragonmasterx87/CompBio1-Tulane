@@ -20,7 +20,6 @@ defaults:
     scope: {path: "docs/index3"}
     values: {nav_order: 3}
   - 
-...
 
 aux_links:
   Template Repository: https://github.com/dragonmasterx87/CompBio-Tulane
