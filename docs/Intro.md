@@ -40,13 +40,23 @@ print(charToRaw('hi!'))
 You can attach peices of info to atomic vectors, this can be information about the vectors itself and is helpful when classifying vector data. Think of this as "metadata"
 ```
 # Lets make a vector
-mario <- ("mario", "luigi", "peaches", "donkeykong", "browser", "toad", 'giuseppe", "koopa", "spike", "penguinking", "kamek")
+mario <- c("mario", "luigi", "peaches", "donkeykong", "browser", "toad", 'giuseppe", "koopa", "spike", "penguinking", "kamek", "goomba", "pirhanaplant")
 
 # Check vector
 mario
 
 # Check if mario has any attributes assigned to it
 attributes(mario)
+```
+
+## Names
+Most common metadata assigned to vectors are names, dimensions and classes. You can look up each of these attributes using helper functions, which looks for that specific attribute.
+```
+# Check if mario has any name attributes assigned to it
+names(mario) <- c("good", "good", "good", "good", "villan", "good", "good", villan", "villan", "good", "good", "villan", "villan") 
+
+# Lets assign names to mario vector
+
 ```
 
 ----
