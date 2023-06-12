@@ -1,13 +1,7 @@
 ---
-layout: page
-title: Calendar
-nav_order: 1
-description: Listing of course modules and topics.
----
-
----
 title: Home
 layout: home
+nav_order: 1
 ---
 
 Welcome to the Computational Biology 1 Workshop (CB1W)!
