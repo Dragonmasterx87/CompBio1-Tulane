@@ -1,6 +1,6 @@
 ---
 title: Day 2
-layout: home
+layout: page
 ---
 
 Welcome to the Computational Biology 1 Workshop (CB1W)!
