@@ -11,3 +11,17 @@ url: https://dragonmasterx87.github.io/CompBio-Tulane
 
 aux_links:
   Template Repository: https://github.com/dragonmasterx87/CompBio-Tulane
+
+---
+layout: default
+title: Day1
+nav_order: 3
+---
+
+---
+layout: default
+title: Day2
+nav_order: 2
+---
+
+
