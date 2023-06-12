@@ -2,13 +2,7 @@
 title: Day 2
 layout: page
 ---
-## Day 1
-1. Introduction to single cell RNA sequencing
-2. Experimental design
-3. Comparison of library preparation and sequencing platforms
-4. Overview of single-cell analysis using Seurat
-5. Installing R and basic syntax
- 
+
 ## Day 2:
 1. Data loading/QC/filtering
 2. Normalization using VST and SC Transform
