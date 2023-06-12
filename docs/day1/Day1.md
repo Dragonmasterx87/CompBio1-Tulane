@@ -1,7 +1,7 @@
 ---
 title: Day 1
 layout: page
-nav_order: 2
+nav_order: 3
 ---
 
 Welcome to the Computational Biology 1 Workshop (CB1W)!
