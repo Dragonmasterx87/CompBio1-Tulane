@@ -1,5 +1,5 @@
 ---
-title: Computational Biology Workshop 1
+title: Day 1
 layout: home
 ---
 
