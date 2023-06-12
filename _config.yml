@@ -1,0 +1,13 @@
+title: CompBio-W1
+description: Welcome to the documentation for the Computation Biology 1 Workshop being held at Tulane University SOM.
+theme: just-the-docs
+color_scheme: dark
+
+layout: default
+title: Customization
+nav_order: 4
+
+url: https://dragonmasterx87.github.io/CompBio-Tulane
+
+aux_links:
+  Template Repository: https://github.com/dragonmasterx87/CompBio-Tulane
