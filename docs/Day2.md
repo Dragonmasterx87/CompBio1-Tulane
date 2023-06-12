@@ -1,13 +1,7 @@
 ---
-layout: page
-title: Calendar
-nav_order: 3
-description: Listing of course modules and topics.
----
-
----
 title: Day 2
 layout: page
+nav_order: 3
 ---
 
 ## Day 2:
