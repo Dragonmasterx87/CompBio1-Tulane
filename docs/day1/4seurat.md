@@ -2,7 +2,7 @@
 title: Overview of single-cell analysis using Seurat
 layout: default
 nav_order: 4
-parent: d1
+parent: Day 1
 ---
 
 ### Intro
