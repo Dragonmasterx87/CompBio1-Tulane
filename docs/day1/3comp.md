@@ -2,7 +2,7 @@
 title: Comparison of library preparation and sequencing platforms
 layout: default
 nav_order: 3
-parent: d1
+parent: Day 1
 ---
 
 ### Intro
