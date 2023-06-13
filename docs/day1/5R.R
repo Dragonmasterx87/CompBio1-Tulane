@@ -2,7 +2,7 @@
 title: Installing R and basic syntax
 layout: page
 nav_order: 5
-parent: day1
+parent: d1
 ---
 
 ## Here we will go over a basic introduction to R
