@@ -14,10 +14,10 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 jtd.addEvent(toggleDarkMode, 'click', function(){
   if (jtd.getTheme() === 'dark') {
     jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Darth Vader';
+    toggleDarkMode.textContent = 'Anakin Skywalker';
   } else {
     jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Anakin Skywalker';
+    toggleDarkMode.textContent = 'Darth Vader';
   }
 });
 </script>
