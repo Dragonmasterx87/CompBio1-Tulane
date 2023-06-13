@@ -1,6 +1,6 @@
 ---
 title: Installing R and basic syntax
-layout: page
+layout: default
 nav_order: 5
 parent: d1
 ---
