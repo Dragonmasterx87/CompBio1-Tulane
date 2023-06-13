@@ -1,6 +1,6 @@
 ---
 title: Introduction to scRNAseq
-layout: page
+layout: default
 nav_order: 1
 parent: d1
 ---
