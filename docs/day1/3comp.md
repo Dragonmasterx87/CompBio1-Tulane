@@ -1,6 +1,6 @@
 ---
 title: Comparison of library preparation and sequencing platforms
-layout: page
+layout: default
 nav_order: 3
 parent: d1
 ---
