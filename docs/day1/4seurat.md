@@ -1,6 +1,6 @@
 ---
 title: Overview of single-cell analysis using Seurat
-layout: page
+layout: default
 nav_order: 4
 parent: d1
 ---
