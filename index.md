@@ -5,8 +5,7 @@ nav_order: 1
 ---
 
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
-### Change website Color scheme
-<button class="btn js-toggle-dark-mode">Change Website to Dark Color</button>
+### Change website Color scheme <button class="btn js-toggle-dark-mode">Change Website to Dark Color</button>
 
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
@@ -14,10 +13,10 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 jtd.addEvent(toggleDarkMode, 'click', function(){
   if (jtd.getTheme() === 'dark') {
     jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Anakin Skywalker';
+    toggleDarkMode.textContent = 'Change to Darth Vader';
   } else {
     jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Darth Vader';
+    toggleDarkMode.textContent = 'Change to Anakin Skywalker';
   }
 });
 </script>
