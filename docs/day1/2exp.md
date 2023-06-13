@@ -2,7 +2,7 @@
 title: Experimental design
 layout: default
 nav_order: 2
-parent: d1
+parent: Day 1
 ---
 
 ### Intro
