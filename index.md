@@ -6,6 +6,23 @@ nav_order: 1
 
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
 
+### Switch between black or white color
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'Preview dark color scheme';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'Return to the light side';
+  }
+});
+</script>
+
 ### Introduction
 In this workshop attendees will learn the basics of scRNAseq experimental design. We will be using the Seurat package in R to analyze single cell RNA sequencing data.
 This workshop will outline the basics of R syntax and usage using R and the integrated developmental environment RStudio. This course is designed to be a basic introduction,
