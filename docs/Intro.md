@@ -49,7 +49,7 @@ mario
 attributes(mario)
 ```
 
-## Names
+#### Names
 Most common metadata assigned to vectors are names, dimensions and classes. You can look up each of these attributes using helper functions, which looks for that specific attribute.
 ```
 # Check if mario has any name attributes assigned to it
@@ -66,7 +66,7 @@ names(mario)
 mario
 ```
 
-## Dims
+#### Dims
 You can transform an atomic vector into a complex n-dimensional array via the attribute `dim`. This can be especially useful when organising and classifying datasets.
 
 ```
@@ -109,7 +109,7 @@ class("hello there!")
 class(2019)
 ```
 
-## Date & Time
+#### Date & Time
 We can check date and time that has passed from 12:00 a.m. Jan. 1, 1970 `POSIXct`
 ```
 time_now <- Sys.time()
@@ -120,7 +120,7 @@ typeof(time_now)
 class(time_now)
 ```
 
-## Factors
+#### Factors
 Factors are R’s way of storing categorical information, like ethnicity or eye color. Think of a factor as something like a sex; it can only have certain values (male or female), and these values may have their own idiosyncratic order. This arrangement makes factors very useful for recording the treatment levels of a study and other categorical variables.
 
 To make a factor, pass an atomic vector into the factor function. R will recode the data in the vector as integers and store the results in an integer vector. R will also add a levels attribute to the integer, which contains a set of labels for displaying the factor values, and a class attribute, which contains the class factor
@@ -138,6 +138,38 @@ attributes(gender)
 ## $class
 ## [1] "factor"
 ```
+
+### Coercion
+
+R likes organization. If your have no idea what you are doing and combining multiple types of data, R will attempt to allocate one unified class to your data by coercing it.
+Forexample if you are combining a integer vector with a acharacter vector, R will convert all values to character. It will also try to apply logic to mathematical questions, for example
+if you ask it the sum of logical values it will coerce the logic to a numerical attribute and perform the calculation.
+
+```
+sum(c(TRUE, TRUE, FALSE, FALSE)) #is the same as
+sum(c(1, 1, 0, 0))
+```
+
+You can overide R and force R to assign data to a certain type:
+```
+as.character(1)
+as.logical(1)
+as.numeric(FALSE)
+```
+
+### Lists
+Lists are one dimensional atomic vectors that can contain complex datasets. It is simply an organizational method. Here the function `list` creats a list similar to how `c` creates a vector.
+
+```
+list_test <- (100:150, c("R", "C++", "C"), list("TRUE", "TRUE", "FALSE", 3))
+list_test
+```
+
+### Dataframes
+A dataframe is a 2-dimensional mode of a list, lists had 1 dimsnion, but dataframes have 2. This is the amongst the most useful form of data storage in R.
+Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data.
+
+Lets load some test data: [deck.csv](http://bit.ly/deck_CSV)
 
 
 
