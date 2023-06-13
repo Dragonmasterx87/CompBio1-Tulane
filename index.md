@@ -6,7 +6,6 @@ nav_order: 1
 
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
 
-### Switch between black or white color
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
 <script>
