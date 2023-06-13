@@ -1,7 +1,10 @@
 ---
 title: Day 2
-layout: page
+layout: default
 nav_order: 3
+has_children: true
+has_toc: false
+permalink: /docs/day2
 ---
 
 ## Day 2:
