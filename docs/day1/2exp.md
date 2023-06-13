@@ -2,7 +2,7 @@
 title: Experimental design
 layout: page
 nav_order: 2
-parent: day1
+parent: d1
 ---
 
 ### Intro
