@@ -6,7 +6,7 @@ nav_order: 1
 
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
 
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+<button class="btn js-toggle-dark-mode">Change Website to Dark Color</button>
 
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
