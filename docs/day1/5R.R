@@ -2,7 +2,7 @@
 title: Installing R and basic syntax
 layout: default
 nav_order: 5
-parent: d1
+parent: Day 1
 ---
 
 ## Here we will go over a basic introduction to R
