@@ -2,7 +2,7 @@
 title: Introduction to scRNAseq
 layout: page
 nav_order: 1
-parent: Day1
+parent: day1
 ---
 
 ### Intro
