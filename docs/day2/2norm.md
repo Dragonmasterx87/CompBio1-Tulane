@@ -4,7 +4,7 @@ layout: default
 nav_order: 2
 parent: Day 2
 ---
-### Normalization using VST and SC Transform
+## Normalization using VST and SC Transform
 
 ----
 
