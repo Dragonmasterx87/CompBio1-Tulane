@@ -13,7 +13,8 @@ An astounding degree of diversity exists across human tissue. In order to evalua
 </p>
 
 
-![](/assets/images/seq1.PNG)
+![](/assets/images/seq1)
+
 
 Figure adaped from [Heumos et al., 2023: Nature Reviews Genetics](https://www.nature.com/articles/s41576-023-00586-w)
 
