@@ -4,8 +4,6 @@ layout: home
 nav_order: 1
 ---
 
-![](../../assets/images/logo_small.PNG)
-
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
 ### Change website Color scheme <button class="btn js-toggle-dark-mode">Change Website to Dark Color</button>
 
