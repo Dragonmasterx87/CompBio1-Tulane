@@ -17,8 +17,6 @@ Before the advent of scRNAseq we would perform bulk RNAseq, where we would take 
 
 The biggest challenge with scRNAseq data is cost and the number of datapoints. In order to analyze and process this data an incredible amount of computing power and computing architecture is required to appropriately analyze and interpret scRNAseq data. It is for this reason that scRNAseq analysis remains a challenge for many biologists today. The major challenges for scRNAseq data are large data volume, low sequencing depth/cell, biological variability, technical variability and computational power.  
 
-
-
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
