@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
-![](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/assets/images/logo_small.png)
+![](/assets/images/logo_small.png)
 ### Change website Color scheme <button class="btn js-toggle-dark-mode">Change Website to Dark Color</button>
 
 <script>
