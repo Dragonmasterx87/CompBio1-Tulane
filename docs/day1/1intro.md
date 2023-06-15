@@ -5,8 +5,10 @@ nav_order: 1
 parent: Day 1
 ---
 
-### Intro
-![](/assets/images/logo_small.png)
+## Introduction
+An astounding degree of diversity exists across human tissue. In order to evaluate cellular heterogeneity across cell types, scRNAseq offers a method to understand underlying cellular gene expression patterns. These expression patters which define cellular states can be used to infer cell function in non-diseases and diseased cell types. We can use scRNAseq to define cell types in a tissue, characterize rare cells, visualize changes over time occuring in the context of development of drug therapy, identify rare low epressed genes, incorporate multiomic data with regards to accessible genome and protein expression data.
+
+
 
 ----
 
