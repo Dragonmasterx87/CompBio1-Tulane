@@ -18,7 +18,7 @@ Still, across multiple platforms differences exsit with full-length seqnecing be
 
 Figure adapted from [Ding et al., 2020: Nature Biotechnology](https://www.nature.com/articles/s41587-020-0465-8)
 
-As of 6/15/2023 the [Tulane the sequencing core](https://medicine.tulane.edu/ctrii/nextgen-sequencing-core) utilizes the 10X Genomics platform using V3 chemsity. The overall workflow of the 10X stsem involves the generation of single cell partitioned libraries, which are then pooled and sequenced in tandem in a HiSeq2500 sequencer. Although staff at the sequencing core generate libraries for you, it is not a bad idea to go over the 10X manuals to study how single cell libraries are constructed, so you can have a better understanding of how cell quality (>90% viability, preferably 95% viability) is essential for high quality data.
+As of 6/15/2023 the [Tulane sequencing core](https://medicine.tulane.edu/ctrii/nextgen-sequencing-core) utilizes the 10X Genomics platform using V3 chemsity. The overall workflow of the 10X stsem involves the generation of single cell partitioned libraries, which are then pooled and sequenced in tandem in a HiSeq2500 sequencer. Although staff at the sequencing core generate libraries for you, it is not a bad idea to go over the 10X manuals to study how single cell libraries are constructed, so you can have a better understanding of how cell quality (>90% viability, preferably 95% viability) is essential for high quality data.
 
 ![](../../assets/images/seq5.JPG)
 
