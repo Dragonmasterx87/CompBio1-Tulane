@@ -6,6 +6,7 @@ parent: Day 1
 ---
 
 ### Intro
+![](/assets/images/logo_small.png)
 
 ----
 
