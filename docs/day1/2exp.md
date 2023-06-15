@@ -11,6 +11,8 @@ Perhaps one of the most central aspects of scRNAseq studies in the study design.
 ![](../../assets/images/balanced_design.png)
 Figure adapted from [Hicks et al., 2018: Biostatistics](https://academic.oup.com/biostatistics/article/19/4/562/4599254)
 
+It is absolutely essential, to never compromise on your "n". Have atleast n=3 for each of your batches (bare minimum) however n>3 is advisable. If you are trying to look at population wide effects then performing statistics on single cells is not advised and a process of pseudobulking is recommended where all reads are compressed on the basis of cell type. So in that case a n=1 or n=2 will be completely inappropriate from the context of a study design. An appropriate mixed model study allows for multiple sample to be sequenced where biological variability and technical variability is addressed at multiple layers of batch correction.
+
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
