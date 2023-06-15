@@ -8,10 +8,10 @@ parent: Day 1
 ## Introduction
 An astounding degree of diversity exists across human tissue. In order to evaluate cellular heterogeneity across cell types, scRNAseq offers a method to understand underlying cellular gene expression patterns. These expression patters which define cellular states can be used to infer cell function in non-diseases and diseased cell types. We can use scRNAseq to define cell types in a tissue, characterize rare cells, visualize changes over time occuring in the context of development of drug therapy, identify rare low epressed genes, incorporate multiomic data with regards to accessible genome and protein expression data.
 
-![](/assets/images/seq1.JPG)
+![](../../assets/images/seq1.JPG)
 
 Figure adaped from [Heumos et al., 2023: Nature Reviews Genetics](https://www.nature.com/articles/s41576-023-00586-w)
-
+WHY WONT THIS WORK
 ## Challenges of scRNAseq analysis
 Before the advent of scRNAseq we would perform bulk RNAseq, where we would take a group of cells and isolate RNA convert that RNA into a cDNA library and then subject to sanger sequencing. This is still a great way to analyze average tissue expression of a gene, and owing to higher depth of sequencing, can be used to study genes with low RNA expression. This is a great methos if you are not concerned about cellular heterogeneity and are looking to see the effect of a treatment/drug or overall average effect on a group of cells. While this remains to be a powerful technique, it still does not allow you to study cellular heterogeneity across tissue types or cellular states. For example when looking at gene expression for a certain set of genes we can be mislead by divergent effects of two seperate groups of cells in a collectively sequenced bulk tissue sample.
 
