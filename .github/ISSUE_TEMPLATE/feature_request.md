@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: Question Regarding Course
 about: Suggest an idea for this project
 title: ''
 labels: ''
