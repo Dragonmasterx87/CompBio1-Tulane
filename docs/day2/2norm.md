@@ -5,7 +5,7 @@ nav_order: 2
 parent: Day 2
 ---
 ## Normalization using VST
-## STEP9 Data processing
+### STEP9 Data processing
 ```r
 # normalize and identify variable features for each dataset independently
 pbmc <- NormalizeData(pbmc, normalization.method = "LogNormalize", scale.factor = 10000)
