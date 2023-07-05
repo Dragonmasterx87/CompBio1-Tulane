@@ -45,7 +45,7 @@ packageVersion("Seurat")
 packageVersion("harmony")
 ```
 
-# STEP3 can be bypassed and you can directly upload data from here ~Fahd_shared_with_participants\data proceed to STEP4
+## STEP3 can be bypassed and you can directly upload data from here ~Fahd_shared_with_participants\data proceed to STEP4
 ```r
 # STEP3 install dataset
 InstallData("ifnb")
@@ -103,7 +103,7 @@ names(stim.split) <- c("stim.d1", "stim.d2", "stim.d3", "stim.d4")
 }
 ```
 
-# STEP5 Addition of donor metadata
+## STEP5 Addition of donor metadata
 ```r
 ifnb.list <- c(ctrl.split, stim.split)
 ifnb.list[["ctrl.d1"]]$donor <- "d1"
@@ -117,13 +117,13 @@ ifnb.list[["stim.d3"]]$donor <- "d3"
 ifnb.list[["stim.d4"]]$donor <- "d4"
 ```
 
-# STEP6 Create a unified list, remember object name comes first in list notation
+## STEP6 Create a unified list, remember object name comes first in list notation
 ```r
 ifnb.list <- list("ctrl.d1" = ctrl.d1, "ctrl.d2" = ctrl.d2, "ctrl.d3" = ctrl.d3, "ctrl.d4" = ctrl.d4,
                   "stim.d1" = stim.d1, "stim.d2" = stim.d2, "stim.d3" = stim.d3, "stim.d4" = stim.d4)
 ```
 
-# STEP7 Merge objects
+## STEP7 Merge objects
 ```r
 pbmc <- merge(ifnb.list[["ctrl.d1"]], y = c(ifnb.list[["ctrl.d2"]], ifnb.list[["ctrl.d3"]], ifnb.list[["ctrl.d4"]],
                                             ifnb.list[["stim.d1"]], ifnb.list[["stim.d2"]], ifnb.list[["stim.d3"]], ifnb.list[["stim.d4"]]), 
@@ -131,14 +131,14 @@ pbmc <- merge(ifnb.list[["ctrl.d1"]], y = c(ifnb.list[["ctrl.d2"]], ifnb.list[["
                                "stim.d1", "stim.d2", "stim.d3", "stim.d4"), project = "pbmc")
 ```
 
-# STEP8 QC
+## STEP8 QC
 ```r
 # The [[ operator can add columns to object metadata. This is a great place to stash QC stats
 grep ("^CCL", rownames(pbmc[["RNA"]]),value = T)
 pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^mt-") # this dataset doesnt contain MT DNA, otherwise we subset on <10% MT
 ```
 
-# Visualize QC metrics as a violin plot
+## Visualize QC metrics as a violin plot
 ```r
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
