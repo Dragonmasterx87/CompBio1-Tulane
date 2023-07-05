@@ -5,7 +5,7 @@ nav_order: 3
 parent: Day 2
 ---
 ## Multidimensional reduction and cell clustering
-## STEP10 Linear dimensionality reduction
+### STEP10 Linear dimensionality reduction
 ```r
 pbmc <- RunPCA(pbmc, pc.genes = pbmc@assays$RNA@var.features, npcs = 20, verbose = TRUE)
 
@@ -25,7 +25,7 @@ JackStrawPlot(pbmc, dims = 1:20)
 ElbowPlot(pbmc)
 ```
 
-## STEP11 Batch correction using Harmony
+### STEP11 Batch correction using Harmony
 ```r
 #Run Harmony batch correction with library and tissue source covariates
 pbmc <- RunHarmony(pbmc,
@@ -37,7 +37,7 @@ pbmc <- RunHarmony(pbmc,
                    plot_convergence = TRUE)
 ```
 
-## STEP12 Non linear multidimensional projection using UMAP
+### STEP12 Non linear multidimensional projection using UMAP
 ```r
 # Run UMAP, on PCA NON-batch corrected data
 pbmc <- RunUMAP(pbmc, reduction = "pca", dims = 1:20, return.model = TRUE)
@@ -47,7 +47,7 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 ```
-## STEP13 Clustering
+### STEP13 Clustering
 ```r
 # Algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
 pbmc <- pbmc %>% 
