@@ -47,6 +47,17 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 ```
+## STEP13 Clustering
+```r
+# algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
+pbmc <- pbmc %>% 
+  FindNeighbors(reduction = 'harmony', dims = 1:20) %>% 
+  FindClusters(algorithm=3,resolution = c(0.5), method = 'igraph') #25 res
+
+Idents(pbmc) <- "seurat_annotations"
+DimPlot(pbmc, reduction = "umap", label = TRUE)
+```
+
 
 ----
 
