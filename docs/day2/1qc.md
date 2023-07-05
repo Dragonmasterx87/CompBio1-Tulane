@@ -11,8 +11,10 @@ parent: Day 2
 # Welcome to CompBio1!!
 # Course instructor: Fahd Qadir Dragonmasterx87 on Github, for questions create an issue in the course repository
 # First we will install packages required to run Seurat
+```
 
-# STEP1 Installation
+## STEP1 Installation
+```r
 # Install the remotes, dplyr, patchwork and dectools packages
 install.packages('remotes')
 install.packages("dplyr")
@@ -38,7 +40,13 @@ suppressPackageStartupMessages({
   set.seed(1234)
 })
 
+# Check
+packageVersion("Seurat")
+packageVersion("harmony")
+```
+
 # STEP3 can be bypassed and you can directly upload data from here ~Fahd_shared_with_participants\data proceed to STEP4
+```r
 # STEP3 install dataset
 InstallData("ifnb")
 
@@ -93,8 +101,10 @@ names(stim.split) <- c("stim.d1", "stim.d2", "stim.d3", "stim.d4")
   stim.d3 <- qread(r"(C:\Users\mqadir\Box\Courses-Workshops\CompBioW1\Fahd_shared_with_participants\data\stim.d3.qs)")
   stim.d4 <- qread(r"(C:\Users\mqadir\Box\Courses-Workshops\CompBioW1\Fahd_shared_with_participants\data\stim.d4.qs)")
 }
+```
 
 # STEP5 Addition of donor metadata
+```r
 ifnb.list <- c(ctrl.split, stim.split)
 ifnb.list[["ctrl.d1"]]$donor <- "d1"
 ifnb.list[["ctrl.d2"]]$donor <- "d2"
@@ -105,23 +115,31 @@ ifnb.list[["stim.d1"]]$donor <- "d1"
 ifnb.list[["stim.d2"]]$donor <- "d2"
 ifnb.list[["stim.d3"]]$donor <- "d3"
 ifnb.list[["stim.d4"]]$donor <- "d4"
+```
 
 # STEP6 Create a unified list, remember object name comes first in list notation
+```r
 ifnb.list <- list("ctrl.d1" = ctrl.d1, "ctrl.d2" = ctrl.d2, "ctrl.d3" = ctrl.d3, "ctrl.d4" = ctrl.d4,
                   "stim.d1" = stim.d1, "stim.d2" = stim.d2, "stim.d3" = stim.d3, "stim.d4" = stim.d4)
+```
 
 # STEP7 Merge objects
+```r
 pbmc <- merge(ifnb.list[["ctrl.d1"]], y = c(ifnb.list[["ctrl.d2"]], ifnb.list[["ctrl.d3"]], ifnb.list[["ctrl.d4"]],
                                             ifnb.list[["stim.d1"]], ifnb.list[["stim.d2"]], ifnb.list[["stim.d3"]], ifnb.list[["stim.d4"]]), 
               add.cell.ids = c("ctrl.d1", "ctrl.d2", "ctrl.d3", "ctrl.d4",
                                "stim.d1", "stim.d2", "stim.d3", "stim.d4"), project = "pbmc")
+```
 
 # STEP8 QC
+```r
 # The [[ operator can add columns to object metadata. This is a great place to stash QC stats
 grep ("^CCL", rownames(pbmc[["RNA"]]),value = T)
 pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^mt-") # this dataset doesnt contain MT DNA, otherwise we subset on <10% MT
+```
 
 # Visualize QC metrics as a violin plot
+```r
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 
@@ -131,6 +149,7 @@ pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 1500 & nCount_
 # Lets visualize new QC metrics as a violin plot
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
+```
 
 # STEP9 Data processing
 # normalize and identify variable features for each dataset independently
