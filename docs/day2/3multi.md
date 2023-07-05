@@ -49,13 +49,29 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 ```
 ## STEP13 Clustering
 ```r
-# algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
+# Algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
 pbmc <- pbmc %>% 
   FindNeighbors(reduction = 'harmony', dims = 1:20) %>% 
   FindClusters(algorithm=3,resolution = c(0.5), method = 'igraph') #25 res
 
 Idents(pbmc) <- "seurat_annotations"
 DimPlot(pbmc, reduction = "umap", label = TRUE)
+
+# Observe gene expression
+FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", "FCGR3A",
+                               "CCL2", "PPBP"), min.cutoff = "q9")
+
+# Rename clusters
+Idents(pbmc) <- "RNA_snn_res.0.5"
+table(pbmc@meta.data[["RNA_snn_res.0.5"]])
+DimPlot(pbmc, reduction = "umap", label = TRUE)
+
+new.cluster.ids <- c("CD14 Mono", "CD4 Naive T", "CD4 Memory T", "CD16 Mono", 
+                     "B", "CD8 T", "T activated", "NK", "DC", "B Activated",
+                     "Mk", "pDC", "Mono/Mk Doublets", "Eryth")
+names(new.cluster.ids) <- levels(pbmc)
+pbmc <- RenameIdents(pbmc, new.cluster.ids)
+DimPlot(pbmc, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ```
 
 
