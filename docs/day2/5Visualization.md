@@ -5,6 +5,9 @@ nav_order: 5
 parent: Day 2
 ---
 ## Visualization
+There are many ways in which scRNAseq data can be visualized, ranging from how you demonstrate you want to show your QC to how you want to show gene expression. Here we are 
+taking differentially expressed genes discovered by using logistic regression single cell models or DESeq2 pseduobulk models and looking at genes that overlap both results,
+using a ven diagram. Venn diagrams can be useful to observe overlapping information.
 ```r
 # Lets look at genes in a venn diagram'
 LR.genes <- rownames(b.interferon.response)
@@ -43,8 +46,8 @@ ggplot() +
 ```
 ![](../../assets/images/venn.JPG)
 
+Note how 70% of genes overlap, but who are they? We can use information stored within the venn object to identify overlaps.
 ```r
-# Note how 70% of genes overlap, but who are they?
 # Look at all sets of genes forming overlaps
 # https://github.com/yanlinlin82/ggvenn/issues/21
 mylist <- data@region[["item"]]
@@ -54,6 +57,7 @@ names(mylist)
 #OUTPUT
 NULL
 ```
+Mapping names onto data, and viewing lists. Note how 134 genes are overlapping both tests, whereas 52 are unique to LR and 4 are unique to DESeq2
 ```r
 names(mylist) <- data@region[["name"]]
 mylist
