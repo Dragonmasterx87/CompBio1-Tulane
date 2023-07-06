@@ -59,11 +59,16 @@ DimPlot(pbmc, reduction = "pca")
 # computation time
 pbmc <- JackStraw(pbmc, num.replicate = 100)
 pbmc <- ScoreJackStraw(pbmc, dims = 1:20)
+|++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=05m 07s
+|++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s 
 JackStrawPlot(pbmc, dims = 1:20)
-
+```
+![](../../assets/images/jack.JPG)
+```r
 # Visualize elbow plot of PC
 ElbowPlot(pbmc)
 ```
+![](../../assets/images/elbow.JPG)
 
 ### STEP11 Batch correction using Harmony
 ```r
