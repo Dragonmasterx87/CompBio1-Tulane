@@ -80,32 +80,133 @@ pbmc <- RunHarmony(pbmc,
                    group.by.vars = c("donor", "stim"),
                    kmeans_init_nstart=20, kmeans_init_iter_max=100,
                    plot_convergence = TRUE)
+Harmony 1/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 2/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 3/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 4/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 5/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 6/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 7/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 8/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 9/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony converged after 9 iterations
+Warning: Invalid name supplied, making object name syntactically valid. New object name is Seurat..ProjectDim.RNA.harmony; see ?make.names for more details on syntax validity
 ```
+![](../../assets/images/harmony.JPG)
 
 ### STEP12 Non linear multidimensional projection using UMAP
 ```r
 # Run UMAP, on PCA NON-batch corrected data
 pbmc <- RunUMAP(pbmc, reduction = "pca", dims = 1:20, return.model = TRUE)
-DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
-
-# Now run Harmony
-pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+UMAP will return its model
+12:48:28 UMAP embedding parameters a = 0.9922 b = 1.112
+12:48:28 Read 13923 rows and found 20 numeric columns
+12:48:28 Using Annoy for neighbor search, n_neighbors = 30
+12:48:28 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+12:48:29 Writing NN index file to temp file C:\Users\mqadir\AppData\Local\Temp\RtmpqizHXk\file4f6c49d77599
+12:48:29 Searching Annoy index using 1 thread, search_k = 3000
+12:48:32 Annoy recall = 100%
+12:48:33 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+12:48:34 Initializing from normalized Laplacian + noise (using irlba)
+12:48:34 Commencing optimization for 200 epochs, with 598286 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+12:48:46 Optimization finished
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 ```
+![](../../assets/images/batcheffect.JPG)
+```r
+# Now run Harmony
+pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
+UMAP will return its model
+12:52:56 UMAP embedding parameters a = 0.9922 b = 1.112
+12:52:56 Read 13923 rows and found 20 numeric columns
+12:52:56 Using Annoy for neighbor search, n_neighbors = 30
+12:52:56 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+12:52:57 Writing NN index file to temp file C:\Users\mqadir\AppData\Local\Temp\RtmpqizHXk\file4f6c2a32094
+12:52:57 Searching Annoy index using 1 thread, search_k = 3000
+12:53:00 Annoy recall = 100%
+12:53:01 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+12:53:03 Initializing from normalized Laplacian + noise (using irlba)
+12:53:03 Commencing optimization for 200 epochs, with 603016 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+12:53:14 Optimization finished
+DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
+```
+![](../../assets/images/umapcorr.JPG)
 ### STEP13 Clustering
 ```r
 # Algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
 pbmc <- pbmc %>% 
   FindNeighbors(reduction = 'harmony', dims = 1:20) %>% 
   FindClusters(algorithm=3,resolution = c(0.5), method = 'igraph') #25 res
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 13923
+Number of edges: 490868
+
+Running smart local moving algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8967
+Number of communities: 14
+Elapsed time: 8 seconds
 
 Idents(pbmc) <- "seurat_annotations"
 DimPlot(pbmc, reduction = "umap", label = TRUE)
-
+```
+![](../../assets/images/umap2.JPG)
+```r
 # Observe gene expression
 FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", "FCGR3A",
                                "CCL2", "PPBP"), min.cutoff = "q9")
-
+```
+![](../../assets/images/geneexp1.JPG)
+```r
 # Rename clusters
 Idents(pbmc) <- "RNA_snn_res.0.5"
 table(pbmc@meta.data[["RNA_snn_res.0.5"]])
