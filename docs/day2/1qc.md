@@ -143,11 +143,11 @@ pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^mt-") # this data
 ```r
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
 ```
-![](../../assets/images/vlnplt.JPEG)
+![](../../assets/images/vlnplt.JPG)
 ```r
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 ```
-![](../../assets/images/scatter.JPEG)
+![](../../assets/images/scatter.JPG)
 ```r
 # Subset data
 pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 1500 & nCount_RNA < 6000)
