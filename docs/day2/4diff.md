@@ -157,6 +157,8 @@ table(combined_pbmc@meta.data[["celltype"]])
                8                8                8                8                8                8 
              pDC      T activated 
                8                8
+```
+```r
 table(combined_pbmc@meta.data[["donor"]])
 ```
 ```r
