@@ -46,7 +46,8 @@ ggplot() +
 ```
 ![](../../assets/images/venn.JPG)
 
-Note how 70% of genes overlap, but who are they? We can use information stored within the venn object to identify overlaps.
+Note how 70% of genes overlap, but who are they? We can use information stored within the Venn object to identify overlaps. I would always default to pseudobulk gene testing, as in this manner differential 
+count numbers across multiple datasets don't affect your analysis, albeit this analysis can be very conservative. I personally prefer being conservative in the DE analysis.
 ```r
 # Look at all sets of genes forming overlaps
 # https://github.com/yanlinlin82/ggvenn/issues/21
@@ -93,6 +94,7 @@ $LR.genes..DESeq2.genes
 [121] "UNC93B1"   "DCK"       "IRF1"      "CCR7"      "TMEM123"   "CASP4"     "HSH2D"     "SLFN5"    
 [129] "CFLAR"     "CASP1"     "VAMP5"     "PSME1"     "XBP1"      "MRPL44" 
 ```
+Another intuitive way in which we can visualize data is via a dotplot. Dotplots are great because you can visualize information across multiple samples for some select genes.
 ```r
 # Visualization via dotplot
 Idents(pbmc) <- factor(Idents(pbmc), levels = c("Mono/Mk Doublets", "pDC", "Eryth", 
@@ -109,6 +111,10 @@ DotPlot(pbmc, features = markers.to.plot, cols = c("blue", "red"), dot.scale = 8
 ```
 ![](../../assets/images/dotplot.JPG)
 
+
+Some other cool tricks, involve changing the color organization in the UMAP plot, here just change the color sequence in the "cols" command to adjust the colors you want to visualize. 
+Note how the colors match the sequence of clusters. If you want to learn more about colors in R look at [this](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf) site for more info.
+Another way to select colors is using hexadecimal codes which can be picked by using this [website](https://htmlcolorcodes.com/), just replace the color names with your hexadecimal code of choice.
 ```r
 # Change colors on UMAP
 DimPlot(pbmc, #switch here to plot
