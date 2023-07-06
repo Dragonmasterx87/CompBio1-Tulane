@@ -39,29 +39,37 @@ ggplot() +
                                 "DESeq2" ="black"),
                      labels = c('D' = 'D = bdiv_human')) +
   theme_void()
+#OUTPUT
+```
+![](../../assets/images/venn.JPG)
 
-
-# Note a how 70% of genes overlap, but who are they?
-
-
+```r
+# Note how 70% of genes overlap, but who are they?
 # Look at all sets of genes forming overlaps
 # https://github.com/yanlinlin82/ggvenn/issues/21
 mylist <- data@region[["item"]]
 names(mylist)
+```
+```r
+#OUTPUT
+NULL
+```
+```r
 names(mylist) <- data@region[["name"]]
 mylist
+```
+```r
+#OUTPUT
 $LR.genes
- [1] "RSAD2"    "OASL"     "PML"      "ETV7"     "DHX58"    "STAT2"    "DDX60"    "DEK"     
- [9] "ZBP1"     "ZNFX1"    "GSDMD"    "MTHFD2"   "HSP90AA1" "ELF1"     "B3GNT2"   "NDUFA9"  
-[17] "LACTB"    "AP3B1"    "DTX3L"    "TMEM140"  "GBP7"     "GLRX"     "SP140"    "TMX1"    
-[25] "BAG1"     "TAP2.1"   "ZNF267"   "CNDP2"    "STAP1"    "CD53"     "HIF1A"    "MYCBP2"  
-[33] "CHI3L2"   "GNB4"     "SYNE2"    "RARRES3"  "GPBP1"    "SNX6"     "CTSS"     "TANK"    
-[41] "IDH3A"    "SOD2"     "MCL1"     "CAST"     "HLA-F"    "EVL"      "RNASEH2B" "UBE2F"   
-[49] "ANXA2R"   "IRF2"     "SQRDL"    "TSPAN13" 
-
+  [1] "RSAD2"    "OASL"     "PML"      "ETV7"     "DHX58"    "STAT2"    "DDX60"    "DEK"     
+  [9] "ZBP1"     "ZNFX1"    "GSDMD"    "MTHFD2"   "HSP90AA1" "ELF1"     "B3GNT2"   "NDUFA9"  
+ [17] "LACTB"    "AP3B1"    "DTX3L"    "TMEM140"  "GBP7"     "GLRX"     "SP140"    "TMX1"    
+ [25] "BAG1"     "TAP2.1"   "ZNF267"   "CNDP2"    "STAP1"    "CD53"     "HIF1A"    "MYCBP2"  
+ [33] "CHI3L2"   "GNB4"     "SYNE2"    "RARRES3"  "GPBP1"    "SNX6"     "CTSS"     "TANK"    
+ [41] "IDH3A"    "SOD2"     "MCL1"     "CAST"     "HLA-F"    "EVL"      "RNASEH2B" "UBE2F"   
+ [49] "ANXA2R"   "IRF2"     "SQRDL"    "TSPAN13"
 $DESeq2.genes
 [1] "HLA-B" "H3F3B" "HLA-C" "LAMP3"
-
 $LR.genes..DESeq2.genes
   [1] "ISG15"     "ISG20"     "IFIT3"     "IFI6"      "IFIT1"     "MX1"       "TNFSF10"   "LY6E"     
   [9] "IFIT2"     "B2M"       "CXCL10"    "PLSCR1"    "IRF7"      "HERC5"     "UBE2L6"    "IFI44L"   
@@ -80,10 +88,9 @@ $LR.genes..DESeq2.genes
 [113] "EHD4"      "NAPA"      "SP100"     "PHF11"     "FAM46A"    "PNPT1"     "ADAR"      "POMP"     
 [121] "UNC93B1"   "DCK"       "IRF1"      "CCR7"      "TMEM123"   "CASP4"     "HSH2D"     "SLFN5"    
 [129] "CFLAR"     "CASP1"     "VAMP5"     "PSME1"     "XBP1"      "MRPL44" 
-
-
-
-# Visualization
+```
+```r
+# Visualization via dotplot
 Idents(pbmc) <- factor(Idents(pbmc), levels = c("Mono/Mk Doublets", "pDC", "Eryth", 
                                                 "Mk", "DC", "CD14 Mono", "CD16 Mono", 
                                                 "B Activated", "B", "CD8 T", "NK", "T activated",
@@ -91,9 +98,12 @@ Idents(pbmc) <- factor(Idents(pbmc), levels = c("Mono/Mk Doublets", "pDC", "Eryt
 markers.to.plot <- c("CD3D", "CREM", "HSPH1", "SELL", "GIMAP5", "CACYBP", "GNLY", "NKG7", "CCL5",
                      "CD8A", "MS4A1", "CD79A", "MIR155HG", "NME1", "FCGR3A", "VMO1", "CCL2", "S100A9", "HLA-DQA1",
                      "GPR183", "PPBP", "GNG11", "HBA2", "HBB", "TSPAN13", "IL3RA", "IGJ")
+Idents(pbmc) <- "celltype"
 DotPlot(pbmc, features = markers.to.plot, cols = c("blue", "red"), dot.scale = 8, split.by = "stim") +
   RotatedAxis()
+#OUTPUT
 ```
+![](../../assets/images/dotplot.JPG)
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
