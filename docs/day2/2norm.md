@@ -20,6 +20,7 @@ Performing log-normalization
 ```r
 # select highly variable features
 pbmc <- FindVariableFeatures(pbmc, selection.method = "vst", nfeatures = 2000)
+```
 ```r
 #OUTPUT
 Calculating gene variances
@@ -35,6 +36,8 @@ Calculating feature variances of standardized and clipped values
 # Identify the 10 most highly variable genes
 top10 <- head(VariableFeatures(pbmc), 10)
 top10
+```
+```r
 #OUTPUT
 [1] "HBB"      "HBA2"     "HBA1"     "APOBEC3B" "CCL4"     "CCL7"     "CCL3"     "IGLL5"    "CXCL1"    "PTGDS"
 ```
@@ -49,7 +52,6 @@ plot1 + plot2
 Warning messages:
 1: Transformation introduced infinite values in continuous x-axis 
 2: Transformation introduced infinite values in continuous x-axis
-#OUTPUT
 ```
 ![](../../assets/images/dispersion.JPG)
 ```r
