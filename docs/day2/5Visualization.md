@@ -210,6 +210,94 @@ dittoBarPlot(pbmc, "celltype",
 #OUTPUT
 ```
 ![](../../assets/images/ditto2.JPG)
+```r
+# Heatmap
+label_genes <- c("CD3D", "CREM", "HSPH1", "SELL", "GIMAP5", "CACYBP", "GNLY", "NKG7", "CCL5",
+                 "CD8A", "MS4A1", "CD79A", "MIR155HG", "NME1", "FCGR3A", "VMO1", "CCL2", "S100A9", "HLA-DQA1",
+                 "GPR183", "PPBP", "GNG11", "HBA2", "HBB", "TSPAN13", "IL3RA", "IGJ")
+genes.to.plot <- pbmc@assays[["RNA"]]@var.features
+dittoHeatmap(
+  combined_pbmc,
+  genes = genes.to.plot,
+  # metas = NULL,
+  # cells.use = NULL,
+  annot.by = c("celltype", "donor", "stim"),
+  #annot.by = c("lib", "sex", "source"),
+  order.by = c("celltype"),
+  # main = NA,
+  # cell.names.meta = NULL,
+  # assay = .default_assay(object),
+  # slot = .default_slot(object),
+  # swap.rownames = NULL,
+  heatmap.colors = colorRampPalette(c("dodgerblue", "white", "red3"))(50),
+  breaks=seq(-2, 2, length.out=50),
+  scaled.to.max = FALSE,
+  # heatmap.colors.max.scaled = colorRampPalette(c("white", "red"))(25),
+  # annot.colors = c(dittoColors(), dittoColors(1)[seq_len(7)]),
+  # annotation_col = NULL,
+  annotation_colors = list(celltype = c("CD14 Mono" = "salmon3",
+                                        "CD4 Naive T" = "orange",
+                                        "CD4 Memory T"= "lightseagreen",
+                                        "CD16 Mono" = "dodgerblue3",
+                                        "B" = "turquoise2",
+                                        "CD8 T" = "burlywood3",
+                                        "T activated" = "darkseagreen2",
+                                        "NK" = "chartreuse3",
+                                        "DC" = "darkorange2",
+                                        "B Activated" = "red",
+                                        "Mk" = "khaki2",
+                                        "pDC" = "springgreen4",
+                                        "Mono/Mk Doublets" = "orchid1",
+                                        "Eryth" = "magenta3"),
+                           donor = c("d1" = "dodgerblue",
+                                     "d2" = "red2",
+                                     "d3" = "green3",
+                                     "d4" = "purple2"),
+                           stim = c("CTRL" = "red4",
+                                    "STIM" = "deepskyblue3")),
+                           # ancestry = c("white" = "deepskyblue3",
+                           #              "black" = "black",
+                           #              "hispanic" = "darkorange"),
+                           # source = c("nPOD" = "dodgerblue",
+                           #            "Tulane" = "springgreen4",         
+                           #            "UPENN" = "red4")),
+  # # data.out = FALSE,
+  # highlight.features = NULL,
+  # highlight.genes = NULL,
+  # show_colnames = isBulk(object),
+  # show_rownames = TRUE,
+  # scale = "row",
+  #cluster_cols = TRUE,
+  # border_color = NA,
+  # legend_breaks = NA,
+  # drop_levels = FALSE,
+  # breaks = NA,
+  # complex = FALSE
+  #gaps_col = c(460),
+  complex = TRUE,
+  use_raster = TRUE,
+  raster_quality = 5
+) + rowAnnotation(mark = anno_mark(at = match(label_genes, 
+                                              rownames(pbmc[genes.to.plot,])), 
+                                   labels = label_genes, 
+                                   which = "row",
+                                   labels_gp = list(cex=1),
+                                   #link_width = unit(4, "mm"), link_height = unit(4, "mm"),
+                                   padding = 0.1))
+```
+```r
+#OUTPUT
+It seems you are using RStudio IDE. `anno_mark()` needs to work with the physical size of the graphics
+device. It only generates correct plot in the figure panel, while in the zoomed plot (by clicking the icon
+'Zoom') or in the exported plot (by clicking the icon 'Export'), the connection to heatmap rows/columns might
+be wrong. You can directly use e.g. pdf() to save the plot into a file.
+
+Use `ht_opt$message = FALSE` to turn off this message.
+Warning message:
+It not suggested to both set `scale` and `breaks`. It makes the function confused.
+```
+![](../../assets/images/heatmap.JPG)
+
 
 ----
 
