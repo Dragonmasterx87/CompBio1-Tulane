@@ -53,6 +53,7 @@ set split.plot = TRUE.
       
 This message will be shown once per session.
 wrap_plots(plots = plots, ncol = 1)
+#OUTPUT
 ```
 ![](../../assets/images/vlnplt3.JPG)
 
