@@ -154,8 +154,12 @@ pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 1500 & nCount_
 
 # Lets visualize new QC metrics as a violin plot
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
+```
+![](../../assets/images/vlnplt2.JPG)
+```r
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 ```
+![](../../assets/images/scatter2.JPG)
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
