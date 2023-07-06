@@ -136,6 +136,81 @@ DimPlot(pbmc, #switch here to plot
 #OUTPUT
 ```
 ![](../../assets/images/umap5.JPG)
+
+```r
+# We can also look at cellular number across various cell types
+pbmc$donor.stim <- paste(pbmc$donor, pbmc$stim, sep = "_")
+table(pbmc$donor.stim)
+```
+```r
+#OUTPUT
+
+     B Activated_CTRL      B Activated_STIM                B_CTRL                B_STIM        CD14 Mono_CTRL 
+                  183                   207                   405                   565                  2209 
+       CD14 Mono_STIM        CD16 Mono_CTRL        CD16 Mono_STIM     CD4 Memory T_CTRL     CD4 Memory T_STIM 
+                 2114                   518                   546                   813                   903 
+     CD4 Naive T_CTRL      CD4 Naive T_STIM            CD8 T_CTRL            CD8 T_STIM               DC_CTRL 
+                 1003                  1475                   320                   466                   226 
+              DC_STIM            Eryth_CTRL            Eryth_STIM               Mk_CTRL               Mk_STIM 
+                  194                    22                    33                    98                   122 
+Mono/Mk Doublets_CTRL Mono/Mk Doublets_STIM               NK_CTRL               NK_STIM              pDC_CTRL 
+                   42                    28                   312                   333                    51 
+             pDC_STIM      T activated_CTRL      T activated_STIM 
+                   77                   315                   343
+```
+```r
+# Lets make a bar plot of cellular proportion
+dittoBarPlot(pbmc, "celltype", 
+             retain.factor.levels = TRUE,
+             scale = "percent",
+             color.panel = c("dodgerblue3",      
+                             "turquoise2",       
+                             "lightseagreen",   
+                             "darkseagreen2",   
+                             "khaki2",           
+                             "springgreen4",     
+                             "chartreuse3",      
+                             "burlywood3",      
+                             "darkorange2",      
+                             "salmon3",         
+                             "orange",           
+                             "salmon",           
+                             "red",              
+                             "magenta3",         
+                             "orchid1",          
+                             "red4",             
+                             "grey30"),          
+             group.by = "donor.stim") + coord_flip()
+#OUTPUT
+```
+![](../../assets/images/ditto1.JPG)
+```r
+# Or even cellular number
+dittoBarPlot(pbmc, "celltype", 
+             retain.factor.levels = TRUE,
+             scale = "count",
+             color.panel = c("dodgerblue3",      
+                             "turquoise2",       
+                             "lightseagreen",   
+                             "darkseagreen2",   
+                             "khaki2",           
+                             "springgreen4",     
+                             "chartreuse3",      
+                             "burlywood3",      
+                             "darkorange2",      
+                             "salmon3",         
+                             "orange",           
+                             "salmon",           
+                             "red",              
+                             "magenta3",         
+                             "orchid1",          
+                             "red4",             
+                             "grey30"),          
+             group.by = "donor.stim") + coord_flip()
+#OUTPUT
+```
+![](../../assets/images/ditto2.JPG)
+
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
