@@ -8,6 +8,7 @@ parent: Day 2
 ### STEP10 Linear dimensionality reduction
 ```r
 pbmc <- RunPCA(pbmc, pc.genes = pbmc@assays$RNA@var.features, npcs = 20, verbose = TRUE)
+#OUTPUT
 PC_ 1 
 Positive:  TYROBP, C15orf48, FCER1G, CST3, SOD2, ANXA5, TYMP, FTL, CD63, TIMP1 
 	   LGALS1, CTSB, KYNU, FCN1, LGALS3, S100A4, APOBEC3A, PSAP, NPC2, ANXA2 
@@ -46,10 +47,12 @@ Negative:  VMO1, FCGR3A, MS4A4A, MS4A7, CXCL16, PPM1N, HN1, LST1, SMPDL3A, CDKN1
 
 # Visualize PCA
 VizDimLoadings(pbmc, dims = 1:2, reduction = "pca")
+#OUTPUT
 ```
 ![](../../assets/images/pca1.JPG)
 ```r
 DimPlot(pbmc, reduction = "pca")
+#OUTPUT
 ```
 ![](../../assets/images/pca2.JPG)
 ```r
@@ -59,14 +62,17 @@ DimPlot(pbmc, reduction = "pca")
 # computation time
 pbmc <- JackStraw(pbmc, num.replicate = 100)
 pbmc <- ScoreJackStraw(pbmc, dims = 1:20)
+#OUTPUT
 |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=05m 07s
 |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s 
 JackStrawPlot(pbmc, dims = 1:20)
+#OUTPUT
 ```
 ![](../../assets/images/jack.JPG)
 ```r
 # Visualize elbow plot of PC
 ElbowPlot(pbmc)
+#OUTPUT
 ```
 ![](../../assets/images/elbow.JPG)
 
@@ -80,6 +86,7 @@ pbmc <- RunHarmony(pbmc,
                    group.by.vars = c("donor", "stim"),
                    kmeans_init_nstart=20, kmeans_init_iter_max=100,
                    plot_convergence = TRUE)
+#OUTPUT
 Harmony 1/10
 0%   10   20   30   40   50   60   70   80   90   100%
 [----|----|----|----|----|----|----|----|----|----|
@@ -117,7 +124,9 @@ Harmony 9/10
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 Harmony converged after 9 iterations
+#OUTPUT
 Warning: Invalid name supplied, making object name syntactically valid. New object name is Seurat..ProjectDim.RNA.harmony; see ?make.names for more details on syntax validity
+#OUTPUT
 ```
 ![](../../assets/images/harmony.JPG)
 
@@ -125,6 +134,7 @@ Warning: Invalid name supplied, making object name syntactically valid. New obje
 ```r
 # Run UMAP, on PCA NON-batch corrected data
 pbmc <- RunUMAP(pbmc, reduction = "pca", dims = 1:20, return.model = TRUE)
+#OUTPUT
 Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
 To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
 This message will be shown once per session
@@ -148,11 +158,13 @@ Using method 'umap'
 **************************************************|
 12:48:46 Optimization finished
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
+#OUTPUT
 ```
 ![](../../assets/images/batcheffect.JPG)
 ```r
 # Now run Harmony
 pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
+#OUTPUT
 UMAP will return its model
 12:52:56 UMAP embedding parameters a = 0.9922 b = 1.112
 12:52:56 Read 13923 rows and found 20 numeric columns
@@ -173,6 +185,7 @@ Using method 'umap'
 **************************************************|
 12:53:14 Optimization finished
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
+#OUTPUT
 ```
 ![](../../assets/images/umapcorr.JPG)
 ### STEP13 Clustering
@@ -181,6 +194,7 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 pbmc <- pbmc %>% 
   FindNeighbors(reduction = 'harmony', dims = 1:20) %>% 
   FindClusters(algorithm=3,resolution = c(0.5), method = 'igraph') #25 res
+#OUTPUT
 Computing nearest neighbor graph
 Computing SNN
 Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
@@ -198,21 +212,25 @@ Elapsed time: 8 seconds
 
 Idents(pbmc) <- "seurat_annotations"
 DimPlot(pbmc, reduction = "umap", label = TRUE)
+#OUTPUT
 ```
 ![](../../assets/images/umap2.JPG)
 ```r
 # Observe gene expression
 FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", "FCGR3A",
                                "CCL2", "PPBP"), min.cutoff = "q9")
+#OUTPUT
 ```
 ![](../../assets/images/geneexp1.JPG)
 ```r
 # Rename clusters
 Idents(pbmc) <- "RNA_snn_res.0.5"
 table(pbmc@meta.data[["RNA_snn_res.0.5"]])
+#OUTPUT
    0    1    2    3    4    5    6    7    8    9   10   11   12   13 
 4323 2478 1716 1064  970  786  658  645  420  390  220  128   70   55 
 DimPlot(pbmc, reduction = "umap", label = TRUE)
+#OUTPUT
 ```
 ![](../../assets/images/umap3.JPG)
 ```r
@@ -222,6 +240,7 @@ new.cluster.ids <- c("CD14 Mono", "CD4 Naive T", "CD4 Memory T", "CD16 Mono",
 names(new.cluster.ids) <- levels(pbmc)
 pbmc <- RenameIdents(pbmc, new.cluster.ids)
 DimPlot(pbmc, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+#OUTPUT
 ```
 ![](../../assets/images/umap4.JPG)
 
