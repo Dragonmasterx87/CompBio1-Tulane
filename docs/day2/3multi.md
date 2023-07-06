@@ -210,8 +210,12 @@ FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", 
 # Rename clusters
 Idents(pbmc) <- "RNA_snn_res.0.5"
 table(pbmc@meta.data[["RNA_snn_res.0.5"]])
+   0    1    2    3    4    5    6    7    8    9   10   11   12   13 
+4323 2478 1716 1064  970  786  658  645  420  390  220  128   70   55 
 DimPlot(pbmc, reduction = "umap", label = TRUE)
-
+```
+![](../../assets/images/umap3.JPG)
+```r
 new.cluster.ids <- c("CD14 Mono", "CD4 Naive T", "CD4 Memory T", "CD16 Mono", 
                      "B", "CD8 T", "T activated", "NK", "DC", "B Activated",
                      "Mk", "pDC", "Mono/Mk Doublets", "Eryth")
@@ -219,7 +223,7 @@ names(new.cluster.ids) <- levels(pbmc)
 pbmc <- RenameIdents(pbmc, new.cluster.ids)
 DimPlot(pbmc, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ```
-
+![](../../assets/images/umap4.JPG)
 
 ----
 
