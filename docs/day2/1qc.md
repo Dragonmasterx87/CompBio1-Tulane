@@ -40,7 +40,17 @@ suppressPackageStartupMessages({
 
 # Check
 packageVersion("Seurat")
+```
+```r
+#OUTPUT
+[1] '4.3.0'
+```
+```r
 packageVersion("harmony")
+```
+```r
+#OUTPUT
+[1] '0.1.1'
 ```
 
 ### STEP3 can be bypassed and you can directly upload data from here ~Fahd_shared_with_participants\data proceed to STEP4
