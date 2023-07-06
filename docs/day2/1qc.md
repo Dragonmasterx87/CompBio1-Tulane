@@ -133,6 +133,9 @@ pbmc <- merge(ifnb.list[["ctrl.d1"]], y = c(ifnb.list[["ctrl.d2"]], ifnb.list[["
 ```r
 # The [[ operator can add columns to object metadata. This is a great place to stash QC stats
 grep ("^CCL", rownames(pbmc[["RNA"]]),value = T)
+```
+```r
+#OUTPUT
 [1] "CCL20"  "CCL28"  "CCL27"  "CCL19"  "CCL22"  "CCL2"   "CCL7"   "CCL8"   "CCL13"  "CCL5"   "CCL23"  "CCL3"  
 [13] "CCL4"   "CCL3L3" "CCL4L1" "CCL3L1" "CCL4L2" "CCL1"   "CCL18"
 
@@ -142,10 +145,12 @@ pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^mt-") # this data
 ### Visualize QC metrics as a violin plot
 ```r
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
+#OUTPUT
 ```
 ![](../../assets/images/vlnplt.JPG)
 ```r
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
+#OUTPUT
 ```
 ![](../../assets/images/scatter.JPG)
 ```r
@@ -154,10 +159,12 @@ pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 1500 & nCount_
 
 # Lets visualize new QC metrics as a violin plot
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
+#OUTPUT
 ```
 ![](../../assets/images/vlnplt2.JPG)
 ```r
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
+#OUTPUT
 ```
 ![](../../assets/images/scatter2.JPG)
 ----
