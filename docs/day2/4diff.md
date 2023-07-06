@@ -61,6 +61,63 @@ DefaultAssay(pbmc) <- "RNA"
 pbmc$celltype.stim.donor <- paste(pbmc$celltype, pbmc$stim, pbmc$donor, sep = "_")
 Idents(pbmc) <- "celltype.stim.donor"
 table(pbmc[["celltype.stim.donor"]])
+celltype.stim.donor
+     B Activated_CTRL_d1      B Activated_CTRL_d2      B Activated_CTRL_d3      B Activated_CTRL_d4 
+                      41                       46                       50                       46 
+     B Activated_STIM_d1      B Activated_STIM_d2      B Activated_STIM_d3      B Activated_STIM_d4 
+                      50                       66                       44                       47 
+               B_CTRL_d1                B_CTRL_d2                B_CTRL_d3                B_CTRL_d4 
+                     110                      109                       93                       93 
+               B_STIM_d1                B_STIM_d2                B_STIM_d3                B_STIM_d4 
+                     136                      141                      145                      143 
+       CD14 Mono_CTRL_d1        CD14 Mono_CTRL_d2        CD14 Mono_CTRL_d3        CD14 Mono_CTRL_d4 
+                     534                      582                      520                      573 
+       CD14 Mono_STIM_d1        CD14 Mono_STIM_d2        CD14 Mono_STIM_d3        CD14 Mono_STIM_d4 
+                     551                      535                      504                      524 
+       CD16 Mono_CTRL_d1        CD16 Mono_CTRL_d2        CD16 Mono_CTRL_d3        CD16 Mono_CTRL_d4 
+                     125                      124                      126                      143 
+       CD16 Mono_STIM_d1        CD16 Mono_STIM_d2        CD16 Mono_STIM_d3        CD16 Mono_STIM_d4 
+                     142                      141                      127                      136 
+    CD4 Memory T_CTRL_d1     CD4 Memory T_CTRL_d2     CD4 Memory T_CTRL_d3     CD4 Memory T_CTRL_d4 
+                     219                      200                      208                      186 
+    CD4 Memory T_STIM_d1     CD4 Memory T_STIM_d2     CD4 Memory T_STIM_d3     CD4 Memory T_STIM_d4 
+                     229                      197                      238                      239 
+     CD4 Naive T_CTRL_d1      CD4 Naive T_CTRL_d2      CD4 Naive T_CTRL_d3      CD4 Naive T_CTRL_d4 
+                     264                      230                      253                      256 
+     CD4 Naive T_STIM_d1      CD4 Naive T_STIM_d2      CD4 Naive T_STIM_d3      CD4 Naive T_STIM_d4 
+                     379                      367                      346                      383 
+           CD8 T_CTRL_d1            CD8 T_CTRL_d2            CD8 T_CTRL_d3            CD8 T_CTRL_d4 
+                      71                       72                       82                       95 
+           CD8 T_STIM_d1            CD8 T_STIM_d2            CD8 T_STIM_d3            CD8 T_STIM_d4 
+                     129                      119                      101                      117 
+              DC_CTRL_d1               DC_CTRL_d2               DC_CTRL_d3               DC_CTRL_d4 
+                      65                       61                       52                       48 
+              DC_STIM_d1               DC_STIM_d2               DC_STIM_d3               DC_STIM_d4 
+                      48                       39                       50                       57 
+           Eryth_CTRL_d1            Eryth_CTRL_d2            Eryth_CTRL_d3            Eryth_CTRL_d4 
+                       5                        5                        6                        6 
+           Eryth_STIM_d1            Eryth_STIM_d2            Eryth_STIM_d3            Eryth_STIM_d4 
+                       7                        9                       10                        7 
+              Mk_CTRL_d1               Mk_CTRL_d2               Mk_CTRL_d3               Mk_CTRL_d4 
+                      21                       30                       26                       21 
+              Mk_STIM_d1               Mk_STIM_d2               Mk_STIM_d3               Mk_STIM_d4 
+                      29                       28                       37                       28 
+Mono/Mk Doublets_CTRL_d1 Mono/Mk Doublets_CTRL_d2 Mono/Mk Doublets_CTRL_d3 Mono/Mk Doublets_CTRL_d4 
+                      17                        5                        9                       11 
+Mono/Mk Doublets_STIM_d1 Mono/Mk Doublets_STIM_d2 Mono/Mk Doublets_STIM_d3 Mono/Mk Doublets_STIM_d4 
+                       4                        7                       11                        6 
+              NK_CTRL_d1               NK_CTRL_d2               NK_CTRL_d3               NK_CTRL_d4 
+                      82                       63                       77                       90 
+              NK_STIM_d1               NK_STIM_d2               NK_STIM_d3               NK_STIM_d4 
+                      75                       85                       86                       87 
+             pDC_CTRL_d1              pDC_CTRL_d2              pDC_CTRL_d3              pDC_CTRL_d4 
+                      10                       15                        9                       17 
+             pDC_STIM_d1              pDC_STIM_d2              pDC_STIM_d3              pDC_STIM_d4 
+                      13                       23                       16                       25 
+     T activated_CTRL_d1      T activated_CTRL_d2      T activated_CTRL_d3      T activated_CTRL_d4 
+                      83                       79                       84                       69 
+     T activated_STIM_d1      T activated_STIM_d2      T activated_STIM_d3      T activated_STIM_d4 
+                      92                       91                       83                       77 
 combined_pbmc <- AggregateExpression(pbmc, 
                                      assays = c("RNA"), 
                                      features = NULL, return.seurat = TRUE,  
@@ -81,11 +138,87 @@ combined_pbmc$celltype.stim.donor <- Cells(combined_pbmc)
 }
 
 table(combined_pbmc@meta.data[["celltype"]])
-table(combined_pbmc@meta.data[["donor"]])
-table(combined_pbmc@meta.data[["celltype.stim.donor"]])
 
+               B      B Activated        CD14 Mono        CD16 Mono     CD4 Memory T      CD4 Naive T 
+               8                8                8                8                8                8 
+           CD8 T               DC            Eryth               Mk Mono/Mk Doublets               NK 
+               8                8                8                8                8                8 
+             pDC      T activated 
+               8                8
+table(combined_pbmc@meta.data[["donor"]])
+d1 d2 d3 d4 
+28 28 28 28 
+table(combined_pbmc@meta.data[["celltype.stim.donor"]])
+     B Activated_CTRL_d1      B Activated_CTRL_d2      B Activated_CTRL_d3      B Activated_CTRL_d4 
+                       1                        1                        1                        1 
+     B Activated_STIM_d1      B Activated_STIM_d2      B Activated_STIM_d3      B Activated_STIM_d4 
+                       1                        1                        1                        1 
+               B_CTRL_d1                B_CTRL_d2                B_CTRL_d3                B_CTRL_d4 
+                       1                        1                        1                        1 
+               B_STIM_d1                B_STIM_d2                B_STIM_d3                B_STIM_d4 
+                       1                        1                        1                        1 
+       CD14 Mono_CTRL_d1        CD14 Mono_CTRL_d2        CD14 Mono_CTRL_d3        CD14 Mono_CTRL_d4 
+                       1                        1                        1                        1 
+       CD14 Mono_STIM_d1        CD14 Mono_STIM_d2        CD14 Mono_STIM_d3        CD14 Mono_STIM_d4 
+                       1                        1                        1                        1 
+       CD16 Mono_CTRL_d1        CD16 Mono_CTRL_d2        CD16 Mono_CTRL_d3        CD16 Mono_CTRL_d4 
+                       1                        1                        1                        1 
+       CD16 Mono_STIM_d1        CD16 Mono_STIM_d2        CD16 Mono_STIM_d3        CD16 Mono_STIM_d4 
+                       1                        1                        1                        1 
+    CD4 Memory T_CTRL_d1     CD4 Memory T_CTRL_d2     CD4 Memory T_CTRL_d3     CD4 Memory T_CTRL_d4 
+                       1                        1                        1                        1 
+    CD4 Memory T_STIM_d1     CD4 Memory T_STIM_d2     CD4 Memory T_STIM_d3     CD4 Memory T_STIM_d4 
+                       1                        1                        1                        1 
+     CD4 Naive T_CTRL_d1      CD4 Naive T_CTRL_d2      CD4 Naive T_CTRL_d3      CD4 Naive T_CTRL_d4 
+                       1                        1                        1                        1 
+     CD4 Naive T_STIM_d1      CD4 Naive T_STIM_d2      CD4 Naive T_STIM_d3      CD4 Naive T_STIM_d4 
+                       1                        1                        1                        1 
+           CD8 T_CTRL_d1            CD8 T_CTRL_d2            CD8 T_CTRL_d3            CD8 T_CTRL_d4 
+                       1                        1                        1                        1 
+           CD8 T_STIM_d1            CD8 T_STIM_d2            CD8 T_STIM_d3            CD8 T_STIM_d4 
+                       1                        1                        1                        1 
+              DC_CTRL_d1               DC_CTRL_d2               DC_CTRL_d3               DC_CTRL_d4 
+                       1                        1                        1                        1 
+              DC_STIM_d1               DC_STIM_d2               DC_STIM_d3               DC_STIM_d4 
+                       1                        1                        1                        1 
+           Eryth_CTRL_d1            Eryth_CTRL_d2            Eryth_CTRL_d3            Eryth_CTRL_d4 
+                       1                        1                        1                        1 
+           Eryth_STIM_d1            Eryth_STIM_d2            Eryth_STIM_d3            Eryth_STIM_d4 
+                       1                        1                        1                        1 
+              Mk_CTRL_d1               Mk_CTRL_d2               Mk_CTRL_d3               Mk_CTRL_d4 
+                       1                        1                        1                        1 
+              Mk_STIM_d1               Mk_STIM_d2               Mk_STIM_d3               Mk_STIM_d4 
+                       1                        1                        1                        1 
+Mono/Mk Doublets_CTRL_d1 Mono/Mk Doublets_CTRL_d2 Mono/Mk Doublets_CTRL_d3 Mono/Mk Doublets_CTRL_d4 
+                       1                        1                        1                        1 
+Mono/Mk Doublets_STIM_d1 Mono/Mk Doublets_STIM_d2 Mono/Mk Doublets_STIM_d3 Mono/Mk Doublets_STIM_d4 
+                       1                        1                        1                        1 
+              NK_CTRL_d1               NK_CTRL_d2               NK_CTRL_d3               NK_CTRL_d4 
+                       1                        1                        1                        1 
+              NK_STIM_d1               NK_STIM_d2               NK_STIM_d3               NK_STIM_d4 
+                       1                        1                        1                        1 
+             pDC_CTRL_d1              pDC_CTRL_d2              pDC_CTRL_d3              pDC_CTRL_d4 
+                       1                        1                        1                        1 
+             pDC_STIM_d1              pDC_STIM_d2              pDC_STIM_d3              pDC_STIM_d4 
+                       1                        1                        1                        1 
+     T activated_CTRL_d1      T activated_CTRL_d2      T activated_CTRL_d3      T activated_CTRL_d4 
+                       1                        1                        1                        1 
+     T activated_STIM_d1      T activated_STIM_d2      T activated_STIM_d3      T activated_STIM_d4 
+                       1                        1                        1                        1
 combined_pbmc$celltype.stim <- paste(combined_pbmc$celltype, combined_pbmc$stim, sep = "_")
 table(combined_pbmc@meta.data[["celltype.stim"]])
+     B Activated_CTRL      B Activated_STIM                B_CTRL                B_STIM        CD14 Mono_CTRL 
+                    4                     4                     4                     4                     4 
+       CD14 Mono_STIM        CD16 Mono_CTRL        CD16 Mono_STIM     CD4 Memory T_CTRL     CD4 Memory T_STIM 
+                    4                     4                     4                     4                     4 
+     CD4 Naive T_CTRL      CD4 Naive T_STIM            CD8 T_CTRL            CD8 T_STIM               DC_CTRL 
+                    4                     4                     4                     4                     4 
+              DC_STIM            Eryth_CTRL            Eryth_STIM               Mk_CTRL               Mk_STIM 
+                    4                     4                     4                     4                     4 
+Mono/Mk Doublets_CTRL Mono/Mk Doublets_STIM               NK_CTRL               NK_STIM              pDC_CTRL 
+                    4                     4                     4                     4                     4 
+             pDC_STIM      T activated_CTRL      T activated_STIM 
+                    4                     4                     4 
 
 Idents(combined_pbmc) <- "celltype.stim"
 b.interferon.response.aggr <- FindMarkers(combined_pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL",
@@ -96,11 +229,33 @@ b.interferon.response.aggr <- FindMarkers(combined_pbmc, ident.1 = "B_STIM", ide
                                           logfc.threshold = 0.5849, #~1.5FC
                                           only.pos = TRUE,
                                           verbose = FALSE)
+Warning: 'latent.vars' is only used for the following tests: negbinom, poisson, MAST, LR
+converting counts to integer mode
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
 
 head(b.interferon.response.aggr, n = 15)
+               p_val avg_log2FC pct.1 pct.2     p_val_adj
+ISG15   0.000000e+00   5.458484     1   1.0  0.000000e+00
+ISG20   0.000000e+00   3.548164     1   1.0  0.000000e+00
+IFI6   1.318852e-111   5.919998     1   1.0 1.853383e-107
+IFIT3   1.038933e-98   6.333155     1   1.0  1.460013e-94
+LY6E    6.543563e-98   4.196682     1   1.0  9.195669e-94
+MX1     1.404512e-97   4.453682     1   1.0  1.973761e-93
+B2M     1.505428e-79   1.096096     1   1.0  2.115578e-75
+IFIT1   7.894356e-69   6.282988     1   1.0  1.109394e-64
+IRF7    3.917788e-68   3.564378     1   1.0  5.505668e-64
+CXCL10  6.061481e-61   8.071050     1   0.5  8.518199e-57
+IFIT2   6.308882e-61   5.546609     1   1.0  8.865872e-57
+PLSCR1  2.569268e-60   4.125013     1   1.0  3.610593e-56
+UBE2L6  8.745682e-60   2.935460     1   1.0  1.229031e-55
+IFITM2  1.077820e-55   3.460921     1   1.0  1.514660e-51
+SAT1    1.858432e-55   2.519988     1   1.0  2.611655e-51
 
 # Why is my adj pval 0?
-.Machine
+.Machine$double.xmin
+[1] 2.225074e-308
 
 # Replace o with low pval, subset for 0.05 FDR and FC > 1.5
 b.interferon.response.aggr$p_val_adj[b.interferon.response.aggr$p_val_adj == 0] <- 2e-302
