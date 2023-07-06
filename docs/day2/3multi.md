@@ -8,6 +8,8 @@ parent: Day 2
 ### STEP10 Linear dimensionality reduction
 ```r
 pbmc <- RunPCA(pbmc, pc.genes = pbmc@assays$RNA@var.features, npcs = 20, verbose = TRUE)
+```
+```r
 #OUTPUT
 PC_ 1 
 Positive:  TYROBP, C15orf48, FCER1G, CST3, SOD2, ANXA5, TYMP, FTL, CD63, TIMP1 
@@ -44,7 +46,8 @@ Positive:  CCL2, CCL7, CCL8, PLA2G7, LMNA, TXN, S100A9, SDS, CSTB, CAPG
 Negative:  VMO1, FCGR3A, MS4A4A, MS4A7, CXCL16, PPM1N, HN1, LST1, SMPDL3A, CDKN1C 
 	   CASP5, ATP1B3, CH25H, AIF1, PLAC8, SERPINA1, LRRC25, GBP5, CD86, HCAR3 
 	   RGS19, RP11-290F20.3, COTL1, VNN2, C3AR1, LILRA5, STXBP2, PILRA, ADA, FCGR3B 
-
+```
+```r
 # Visualize PCA
 VizDimLoadings(pbmc, dims = 1:2, reduction = "pca")
 #OUTPUT
@@ -62,6 +65,8 @@ DimPlot(pbmc, reduction = "pca")
 # computation time
 pbmc <- JackStraw(pbmc, num.replicate = 100)
 pbmc <- ScoreJackStraw(pbmc, dims = 1:20)
+```
+```r
 #OUTPUT
 |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=05m 07s
 |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s 
@@ -86,6 +91,8 @@ pbmc <- RunHarmony(pbmc,
                    group.by.vars = c("donor", "stim"),
                    kmeans_init_nstart=20, kmeans_init_iter_max=100,
                    plot_convergence = TRUE)
+```
+```r
 #OUTPUT
 Harmony 1/10
 0%   10   20   30   40   50   60   70   80   90   100%
@@ -124,7 +131,6 @@ Harmony 9/10
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 Harmony converged after 9 iterations
-#OUTPUT
 Warning: Invalid name supplied, making object name syntactically valid. New object name is Seurat..ProjectDim.RNA.harmony; see ?make.names for more details on syntax validity
 #OUTPUT
 ```
@@ -134,6 +140,8 @@ Warning: Invalid name supplied, making object name syntactically valid. New obje
 ```r
 # Run UMAP, on PCA NON-batch corrected data
 pbmc <- RunUMAP(pbmc, reduction = "pca", dims = 1:20, return.model = TRUE)
+```
+```r
 #OUTPUT
 Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
 To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
@@ -164,6 +172,8 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 ```r
 # Now run Harmony
 pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
+```
+```r
 #OUTPUT
 UMAP will return its model
 12:52:56 UMAP embedding parameters a = 0.9922 b = 1.112
@@ -184,6 +194,8 @@ Using method 'umap'
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 12:53:14 Optimization finished
+```
+```r
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 #OUTPUT
 ```
@@ -194,6 +206,8 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 pbmc <- pbmc %>% 
   FindNeighbors(reduction = 'harmony', dims = 1:20) %>% 
   FindClusters(algorithm=3,resolution = c(0.5), method = 'igraph') #25 res
+```
+```r
 #OUTPUT
 Computing nearest neighbor graph
 Computing SNN
@@ -209,7 +223,8 @@ Running smart local moving algorithm...
 Maximum modularity in 10 random starts: 0.8967
 Number of communities: 14
 Elapsed time: 8 seconds
-
+```
+```r
 Idents(pbmc) <- "seurat_annotations"
 DimPlot(pbmc, reduction = "umap", label = TRUE)
 #OUTPUT
@@ -226,9 +241,13 @@ FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", 
 # Rename clusters
 Idents(pbmc) <- "RNA_snn_res.0.5"
 table(pbmc@meta.data[["RNA_snn_res.0.5"]])
+```
+```r
 #OUTPUT
    0    1    2    3    4    5    6    7    8    9   10   11   12   13 
-4323 2478 1716 1064  970  786  658  645  420  390  220  128   70   55 
+4323 2478 1716 1064  970  786  658  645  420  390  220  128   70   55
+```
+```r
 DimPlot(pbmc, reduction = "umap", label = TRUE)
 #OUTPUT
 ```
