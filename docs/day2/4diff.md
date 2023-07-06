@@ -21,13 +21,39 @@ b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL
                                      logfc.threshold = 0.5849, #~1.5FC
                                      only.pos = TRUE,
                                      verbose = FALSE)
+Warning message:
+glm.fit: fitted probabilities numerically 0 or 1 occurred 
 
 head(b.interferon.response, n = 15)
+                p_val avg_log2FC pct.1 pct.2     p_val_adj
+ISG15   1.886870e-251  4.5777825 0.998 0.244 2.651618e-247
+ISG20   6.775871e-233  2.9286888 1.000 0.674 9.522132e-229
+IFIT3   2.249518e-226  4.5012181 0.963 0.052 3.161247e-222
+IFI6    7.675338e-222  4.2569268 0.965 0.077 1.078615e-217
+IFIT1   1.235784e-197  4.1209722 0.908 0.032 1.736647e-193
+MX1     1.447618e-160  3.2484413 0.908 0.116 2.034337e-156
+TNFSF10 1.295544e-148  3.7724262 0.781 0.022 1.820627e-144
+LY6E    1.309127e-148  3.1014142 0.894 0.151 1.839716e-144
+IFIT2   4.554090e-142  3.6335959 0.786 0.037 6.399863e-138
+B2M     2.530957e-119  0.6158652 1.000 1.000 3.556754e-115
+CXCL10  4.799024e-113  5.3217240 0.644 0.010 6.744069e-109
+PLSCR1  2.659608e-112  2.8015323 0.788 0.119 3.737548e-108
+IRF7    3.667981e-108  2.5623663 0.837 0.193 5.154613e-104
+HERC5    6.244788e-98  2.8136999 0.611 0.022  8.775800e-94
+UBE2L6   7.032047e-91  2.1202128 0.857 0.301  9.882136e-87
+
 b.interferon.response <- dplyr::filter(b.interferon.response, p_val_adj < 5e-2)
 plots <- VlnPlot(pbmc, features = c("ISG15", "ISG20"), split.by = "stim", group.by = "celltype",
                  pt.size = 0, combine = FALSE)
+The default behaviour of split.by has changed.
+Separate violin plots are now plotted side-by-side.
+To restore the old behaviour of a single split violin,
+set split.plot = TRUE.
+      
+This message will be shown once per session.
 wrap_plots(plots = plots, ncol = 1)
 ```
+![](../../assets/images/vlnplt3.JPG)
 
 ### STEP13B: Pseudobulk testing
 ```r
