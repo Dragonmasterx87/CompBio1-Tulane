@@ -142,10 +142,13 @@ pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^mt-") # this data
 ### Visualize QC metrics as a violin plot
 ```r
 VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA"), ncol = 2)
+```
 ![](../../assets/images/vlnplt.JPEG)
+```r
 FeatureScatter(pbmc, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
+```
 ![](../../assets/images/scatter.JPEG)
-
+```r
 # Subset data
 pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 1500 & nCount_RNA < 6000)
 
