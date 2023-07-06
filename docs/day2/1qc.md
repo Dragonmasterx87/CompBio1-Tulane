@@ -138,7 +138,8 @@ grep ("^CCL", rownames(pbmc[["RNA"]]),value = T)
 #OUTPUT
 [1] "CCL20"  "CCL28"  "CCL27"  "CCL19"  "CCL22"  "CCL2"   "CCL7"   "CCL8"   "CCL13"  "CCL5"   "CCL23"  "CCL3"  
 [13] "CCL4"   "CCL3L3" "CCL4L1" "CCL3L1" "CCL4L2" "CCL1"   "CCL18"
-
+```
+```r
 pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^mt-") # this dataset doesnt contain MT DNA, otherwise we subset on <10% MT
 ```
 
