@@ -1,5 +1,5 @@
 ---
-title: Normalization using VST and SC Transform
+title: Normalization using VST
 layout: default
 nav_order: 2
 parent: Day 2
