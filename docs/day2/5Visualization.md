@@ -40,12 +40,47 @@ ggplot() +
                      labels = c('D' = 'D = bdiv_human')) +
   theme_void()
 
+
+# Note a how 70% of genes overlap, but who are they?
+
+
 # Look at all sets of genes forming overlaps
 # https://github.com/yanlinlin82/ggvenn/issues/21
 mylist <- data@region[["item"]]
 names(mylist)
 names(mylist) <- data@region[["name"]]
 mylist
+$LR.genes
+ [1] "RSAD2"    "OASL"     "PML"      "ETV7"     "DHX58"    "STAT2"    "DDX60"    "DEK"     
+ [9] "ZBP1"     "ZNFX1"    "GSDMD"    "MTHFD2"   "HSP90AA1" "ELF1"     "B3GNT2"   "NDUFA9"  
+[17] "LACTB"    "AP3B1"    "DTX3L"    "TMEM140"  "GBP7"     "GLRX"     "SP140"    "TMX1"    
+[25] "BAG1"     "TAP2.1"   "ZNF267"   "CNDP2"    "STAP1"    "CD53"     "HIF1A"    "MYCBP2"  
+[33] "CHI3L2"   "GNB4"     "SYNE2"    "RARRES3"  "GPBP1"    "SNX6"     "CTSS"     "TANK"    
+[41] "IDH3A"    "SOD2"     "MCL1"     "CAST"     "HLA-F"    "EVL"      "RNASEH2B" "UBE2F"   
+[49] "ANXA2R"   "IRF2"     "SQRDL"    "TSPAN13" 
+
+$DESeq2.genes
+[1] "HLA-B" "H3F3B" "HLA-C" "LAMP3"
+
+$LR.genes..DESeq2.genes
+  [1] "ISG15"     "ISG20"     "IFIT3"     "IFI6"      "IFIT1"     "MX1"       "TNFSF10"   "LY6E"     
+  [9] "IFIT2"     "B2M"       "CXCL10"    "PLSCR1"    "IRF7"      "HERC5"     "UBE2L6"    "IFI44L"   
+ [17] "EPSTI1"    "OAS1"      "GBP1"      "IFITM2"    "SAMD9L"    "NT5C3A"    "IFI35"     "PSMB9"    
+ [25] "MX2"       "DYNLT1"    "BST2"      "IFITM3"    "CMPK2"     "SAT1"      "EIF2AK2"   "PPM1K"    
+ [33] "GBP4"      "DDX58"     "PSMA2.1"   "LAP3"      "SAMD9"     "XAF1"      "IFI16"     "COX5A"    
+ [41] "SOCS1"     "MYL12A"    "SP110"     "PARP14"    "PSME2"     "TMSB10"    "CHST12"    "FBXO6"    
+ [49] "MT2A"      "PLAC8"     "TRIM22"    "DRAP1"     "SUB1"      "TNFSF13B"  "NMI"       "XRN1"     
+ [57] "NEXN"      "RBCK1"     "CLEC2D"    "MNDA"      "RNF213"    "IFI44"     "GBP5"      "NPC2"     
+ [65] "STAT1"     "WARS"      "OAS2"      "SELL"      "TAP1"      "DDX60L"    "IRF8"      "OAS3"     
+ [73] "RTCB"      "IFITM1"    "KIAA0040"  "CXCL11"    "CARD16"    "PSMA4"     "DNAJA1"    "IFIH1"    
+ [81] "TYMP"      "HLA-E"     "LGALS9"    "NUB1"      "C19orf66"  "GBP2"      "PSMB8"     "GNG5"     
+ [89] "HAPLN3"    "PMAIP1"    "IFIT5"     "PARP9"     "CD38"      "GMPR"      "C5orf56"   "EAF2"     
+ [97] "HERC6"     "CD48"      "RTP4"      "RABGAP1L"  "USP30-AS1" "TREX1"     "IGFBP4"    "INPP1"    
+[105] "CCL8"      "CREM"      "CD164"     "CLIC1"     "APOL6"     "CCL2"      "SMCHD1"    "ODF2L"    
+[113] "EHD4"      "NAPA"      "SP100"     "PHF11"     "FAM46A"    "PNPT1"     "ADAR"      "POMP"     
+[121] "UNC93B1"   "DCK"       "IRF1"      "CCR7"      "TMEM123"   "CASP4"     "HSH2D"     "SLFN5"    
+[129] "CFLAR"     "CASP1"     "VAMP5"     "PSME1"     "XBP1"      "MRPL44" 
+
 
 
 # Visualization
