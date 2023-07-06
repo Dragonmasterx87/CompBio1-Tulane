@@ -104,6 +104,38 @@ DotPlot(pbmc, features = markers.to.plot, cols = c("blue", "red"), dot.scale = 8
 #OUTPUT
 ```
 ![](../../assets/images/dotplot.JPG)
+
+```r
+# Change colors on UMAP
+DimPlot(pbmc, #switch here to plot
+        #split.by = "Diabetes Status", 
+        group.by = "celltype", 
+        label = FALSE, 
+        ncol = 1, 
+        raster = FALSE,
+        pt.size = 0.05,
+        cols = c("dodgerblue3",      
+                 "turquoise2",       
+                 "lightseagreen",    
+                 "darkseagreen2",    
+                 "khaki2",            
+                 "springgreen4",     
+                 "chartreuse3",      
+                 "burlywood3",       
+                 "darkorange2",      
+                 "salmon3",          
+                 "orange",           
+                 "salmon",           
+                 "red",              
+                 "magenta3",         
+                 "orchid1",          
+                 "red4",             
+                 "grey30"            
+        )
+)
+#OUTPUT
+```
+![](../../assets/images/umap5.JPG)
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
