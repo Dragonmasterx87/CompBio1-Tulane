@@ -25,6 +25,8 @@ Warning message:
 glm.fit: fitted probabilities numerically 0 or 1 occurred 
 
 head(b.interferon.response, n = 15)
+```
+```r
 #OUTPUT
                 p_val avg_log2FC pct.1 pct.2     p_val_adj
 ISG15   1.886870e-251  4.5777825 0.998 0.244 2.651618e-247
@@ -42,7 +44,8 @@ PLSCR1  2.659608e-112  2.8015323 0.788 0.119 3.737548e-108
 IRF7    3.667981e-108  2.5623663 0.837 0.193 5.154613e-104
 HERC5    6.244788e-98  2.8136999 0.611 0.022  8.775800e-94
 UBE2L6   7.032047e-91  2.1202128 0.857 0.301  9.882136e-87
-
+```
+```r
 b.interferon.response <- dplyr::filter(b.interferon.response, p_val_adj < 5e-2)
 plots <- VlnPlot(pbmc, features = c("ISG15", "ISG20"), split.by = "stim", group.by = "celltype",
                  pt.size = 0, combine = FALSE)
@@ -64,6 +67,8 @@ pbmc$celltype.stim.donor <- paste(pbmc$celltype, pbmc$stim, pbmc$donor, sep = "_
 Idents(pbmc) <- "celltype.stim.donor"
 table(pbmc[["celltype.stim.donor"]])
 celltype.stim.donor
+```
+```r
 #OUTPUT
      B Activated_CTRL_d1      B Activated_CTRL_d2      B Activated_CTRL_d3      B Activated_CTRL_d4 
                       41                       46                       50                       46 
@@ -120,7 +125,9 @@ Mono/Mk Doublets_STIM_d1 Mono/Mk Doublets_STIM_d2 Mono/Mk Doublets_STIM_d3 Mono/
      T activated_CTRL_d1      T activated_CTRL_d2      T activated_CTRL_d3      T activated_CTRL_d4 
                       83                       79                       84                       69 
      T activated_STIM_d1      T activated_STIM_d2      T activated_STIM_d3      T activated_STIM_d4 
-                      92                       91                       83                       77 
+                      92                       91                       83                       77
+```
+```r
 combined_pbmc <- AggregateExpression(pbmc, 
                                      assays = c("RNA"), 
                                      features = NULL, return.seurat = TRUE,  
@@ -141,6 +148,8 @@ combined_pbmc$celltype.stim.donor <- Cells(combined_pbmc)
 }
 
 table(combined_pbmc@meta.data[["celltype"]])
+```
+```r
 #OUTPUT
                B      B Activated        CD14 Mono        CD16 Mono     CD4 Memory T      CD4 Naive T 
                8                8                8                8                8                8 
@@ -149,10 +158,16 @@ table(combined_pbmc@meta.data[["celltype"]])
              pDC      T activated 
                8                8
 table(combined_pbmc@meta.data[["donor"]])
+```
+```r
 #OUTPUT
 d1 d2 d3 d4 
-28 28 28 28 
+28 28 28 28
+```
+```r
 table(combined_pbmc@meta.data[["celltype.stim.donor"]])
+```
+```r
 #OUTPUT
      B Activated_CTRL_d1      B Activated_CTRL_d2      B Activated_CTRL_d3      B Activated_CTRL_d4 
                        1                        1                        1                        1 
@@ -210,8 +225,12 @@ Mono/Mk Doublets_STIM_d1 Mono/Mk Doublets_STIM_d2 Mono/Mk Doublets_STIM_d3 Mono/
                        1                        1                        1                        1 
      T activated_STIM_d1      T activated_STIM_d2      T activated_STIM_d3      T activated_STIM_d4 
                        1                        1                        1                        1
+```
+```r
 combined_pbmc$celltype.stim <- paste(combined_pbmc$celltype, combined_pbmc$stim, sep = "_")
 table(combined_pbmc@meta.data[["celltype.stim"]])
+```
+```r
 #OUTPUT
      B Activated_CTRL      B Activated_STIM                B_CTRL                B_STIM        CD14 Mono_CTRL 
                     4                     4                     4                     4                     4 
@@ -224,8 +243,9 @@ table(combined_pbmc@meta.data[["celltype.stim"]])
 Mono/Mk Doublets_CTRL Mono/Mk Doublets_STIM               NK_CTRL               NK_STIM              pDC_CTRL 
                     4                     4                     4                     4                     4 
              pDC_STIM      T activated_CTRL      T activated_STIM 
-                    4                     4                     4 
-
+                    4                     4                     4
+```
+```r
 Idents(combined_pbmc) <- "celltype.stim"
 b.interferon.response.aggr <- FindMarkers(combined_pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL",
                                           slot = 'data',
@@ -242,6 +262,8 @@ mean-dispersion relationship
 final dispersion estimates
 
 head(b.interferon.response.aggr, n = 15)
+```
+```r
 #OUTPUT
                p_val avg_log2FC pct.1 pct.2     p_val_adj
 ISG15   0.000000e+00   5.458484     1   1.0  0.000000e+00
@@ -259,18 +281,24 @@ PLSCR1  2.569268e-60   4.125013     1   1.0  3.610593e-56
 UBE2L6  8.745682e-60   2.935460     1   1.0  1.229031e-55
 IFITM2  1.077820e-55   3.460921     1   1.0  1.514660e-51
 SAT1    1.858432e-55   2.519988     1   1.0  2.611655e-51
-
+```
+```r
 # Why is my adj pval 0?
 .Machine$double.xmin
+```
+```r
 #OUTPUT
 [1] 2.225074e-308
-
+```
+```r
 # Replace 0 with low pval, subset for 0.05 FDR and FC > 1.5
 b.interferon.response.aggr$p_val_adj[b.interferon.response.aggr$p_val_adj == 0] <- 2e-302
 b.interferon.response.aggr <- dplyr::filter(b.interferon.response.aggr, p_val_adj < 5e-2)
 b.interferon.response.aggr <- dplyr::filter(b.interferon.response.aggr, avg_log2FC > 0.5849)
 
 intersect(rownames(b.interferon.response), rownames(b.interferon.response.aggr))
+```
+```r
 #OUTPUT
   [1] "ISG15"     "ISG20"     "IFIT3"     "IFI6"      "IFIT1"     "MX1"       "TNFSF10"   "LY6E"      "IFIT2"    
  [10] "B2M"       "CXCL10"    "PLSCR1"    "IRF7"      "HERC5"     "UBE2L6"    "IFI44L"    "EPSTI1"    "OAS1"     
