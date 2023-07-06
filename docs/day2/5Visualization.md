@@ -147,8 +147,10 @@ DimPlot(pbmc, #switch here to plot
 ```
 ![](../../assets/images/umap5.JPG)
 
+We can also look at cellular numbers across various cell types. These plots can be useful to add to QC, or if you are interested in looking at the diversity of your dataset.
+
 ```r
-# We can also look at cellular number across various cell types
+# Look at cell proportion
 pbmc$donor.stim <- paste(pbmc$donor, pbmc$stim, sep = "_")
 table(pbmc$donor.stim)
 ```
@@ -169,7 +171,7 @@ Mono/Mk Doublets_CTRL Mono/Mk Doublets_STIM               NK_CTRL               
                    77                   315                   343
 ```
 ```r
-# Lets make a bar plot of cellular proportion
+# Let's make a bar plot of cellular proportion
 dittoBarPlot(pbmc, "celltype", 
              retain.factor.levels = TRUE,
              scale = "percent",
@@ -194,6 +196,8 @@ dittoBarPlot(pbmc, "celltype",
 #OUTPUT
 ```
 ![](../../assets/images/ditto1.JPG)
+
+Similarly, we can look at the total cell number.
 ```r
 # Or even cellular number
 dittoBarPlot(pbmc, "celltype", 
@@ -220,6 +224,9 @@ dittoBarPlot(pbmc, "celltype",
 #OUTPUT
 ```
 ![](../../assets/images/ditto2.JPG)
+
+Heatmaps are really intuitive methods to look at a variety of genes, this customized heatmap is based on the [dittoHeatmap](https://rdrr.io/github/dtm2451/dittoSeq/man/dittoHeatmap.html) package. Note
+how we are looking at the pseudobulked data to generate a heatmap.
 ```r
 # Heatmap
 label_genes <- c("CD3D", "CREM", "HSPH1", "SELL", "GIMAP5", "CACYBP", "GNLY", "NKG7", "CCL5",
