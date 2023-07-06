@@ -257,12 +257,27 @@ SAT1    1.858432e-55   2.519988     1   1.0  2.611655e-51
 .Machine$double.xmin
 [1] 2.225074e-308
 
-# Replace o with low pval, subset for 0.05 FDR and FC > 1.5
+# Replace 0 with low pval, subset for 0.05 FDR and FC > 1.5
 b.interferon.response.aggr$p_val_adj[b.interferon.response.aggr$p_val_adj == 0] <- 2e-302
 b.interferon.response.aggr <- dplyr::filter(b.interferon.response.aggr, p_val_adj < 5e-2)
 b.interferon.response.aggr <- dplyr::filter(b.interferon.response.aggr, avg_log2FC > 0.5849)
 
 intersect(rownames(b.interferon.response), rownames(b.interferon.response.aggr))
+  [1] "ISG15"     "ISG20"     "IFIT3"     "IFI6"      "IFIT1"     "MX1"       "TNFSF10"   "LY6E"      "IFIT2"    
+ [10] "B2M"       "CXCL10"    "PLSCR1"    "IRF7"      "HERC5"     "UBE2L6"    "IFI44L"    "EPSTI1"    "OAS1"     
+ [19] "GBP1"      "IFITM2"    "SAMD9L"    "NT5C3A"    "IFI35"     "PSMB9"     "MX2"       "DYNLT1"    "BST2"     
+ [28] "IFITM3"    "CMPK2"     "SAT1"      "EIF2AK2"   "PPM1K"     "GBP4"      "DDX58"     "PSMA2.1"   "LAP3"     
+ [37] "SAMD9"     "XAF1"      "IFI16"     "COX5A"     "SOCS1"     "MYL12A"    "SP110"     "PARP14"    "PSME2"    
+ [46] "TMSB10"    "CHST12"    "FBXO6"     "MT2A"      "PLAC8"     "TRIM22"    "DRAP1"     "SUB1"      "TNFSF13B" 
+ [55] "NMI"       "XRN1"      "NEXN"      "RBCK1"     "CLEC2D"    "MNDA"      "RNF213"    "IFI44"     "GBP5"     
+ [64] "NPC2"      "STAT1"     "WARS"      "OAS2"      "SELL"      "TAP1"      "DDX60L"    "IRF8"      "OAS3"     
+ [73] "RTCB"      "IFITM1"    "KIAA0040"  "CXCL11"    "CARD16"    "PSMA4"     "DNAJA1"    "IFIH1"     "TYMP"     
+ [82] "HLA-E"     "LGALS9"    "NUB1"      "C19orf66"  "GBP2"      "PSMB8"     "GNG5"      "HAPLN3"    "PMAIP1"   
+ [91] "IFIT5"     "PARP9"     "CD38"      "GMPR"      "C5orf56"   "EAF2"      "HERC6"     "CD48"      "RTP4"     
+[100] "RABGAP1L"  "USP30-AS1" "TREX1"     "IGFBP4"    "INPP1"     "CCL8"      "CREM"      "CD164"     "CLIC1"    
+[109] "APOL6"     "CCL2"      "SMCHD1"    "ODF2L"     "EHD4"      "NAPA"      "SP100"     "PHF11"     "FAM46A"   
+[118] "PNPT1"     "ADAR"      "POMP"      "UNC93B1"   "DCK"       "IRF1"      "CCR7"      "TMEM123"   "CASP4"    
+[127] "HSH2D"     "SLFN5"     "CFLAR"     "CASP1"     "VAMP5"     "PSME1"     "XBP1"      "MRPL44"
 ```
 
 ----
