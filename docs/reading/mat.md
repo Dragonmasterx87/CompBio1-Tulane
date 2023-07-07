@@ -20,7 +20,8 @@ permalink: /docs/reading
 1. [HarvardX Biomedical Data Science Open Online Training](http://rafalab.dfci.harvard.edu/pages/harvardx.html) taught by Michael Love and Rafael Irizarry
 
 ### Podcasts
-1. [Michael Love's](https://scholar.google.com/citations?hl=en&user=vzXv764AAAAJ&view_op=list_works) (Father of DESeq2) [interview on The Bioinformatics Chat](https://bioinformatics.chat/deseq2) A nice historical perspective of DESEq2
+1. [Michael Love's](https://scholar.google.com/citations?hl=en&user=vzXv764AAAAJ&view_op=list_works) (Father of DESeq2) [interview](https://bioinformatics.chat/deseq2) on [The Bioinformatics Chat](https://bioinformatics.chat/) A nice historical perspective of DESEq2
+2. Aleksandra Kolodziejczyk's [interview](https://bioinformatics.chat/single-cell-rna-seq) on [The Bioinformatics Chat](https://bioinformatics.chat/), A nice summary of scRNAseq 
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
