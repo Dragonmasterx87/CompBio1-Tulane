@@ -6,6 +6,9 @@ parent: Day 2
 ---
 ## Multidimensional reduction and cell clustering
 ### STEP10 Linear dimensionality reduction
+
+Reducing data is important so that we can visualize it in a 2-dimensional plane. Read this paper by [Lever et al., 2017: Nature Methods](https://www.nature.com/articles/nmeth.4346) to read more about principal component analysis.
+
 ```r
 pbmc <- RunPCA(pbmc, pc.genes = pbmc@assays$RNA@var.features, npcs = 20, verbose = TRUE)
 ```
@@ -47,19 +50,28 @@ Negative:  VMO1, FCGR3A, MS4A4A, MS4A7, CXCL16, PPM1N, HN1, LST1, SMPDL3A, CDKN1
 	   CASP5, ATP1B3, CH25H, AIF1, PLAC8, SERPINA1, LRRC25, GBP5, CD86, HCAR3 
 	   RGS19, RP11-290F20.3, COTL1, VNN2, C3AR1, LILRA5, STXBP2, PILRA, ADA, FCGR3B 
 ```
+
+Now let's visualize the PCA outputs to see how individual components are being affected by which set of genes
+
 ```r
 # Visualize PCA
 VizDimLoadings(pbmc, dims = 1:2, reduction = "pca")
 #OUTPUT
 ```
 ![](../../assets/images/pca1.JPG)
+
+Now let's look at the output of how cells cluster based on the pca, note the batch effect, as the two sets of data seem to "shift" away from one another. We will need to batch-correct this data, you will see why at a later point.
+
 ```r
 DimPlot(pbmc, reduction = "pca")
 #OUTPUT
 ```
 ![](../../assets/images/pca2.JPG)
+
+determining clustering in your sc data can be very complex. We can use some intuitive tools embedded in Seurat's framework to allow us to make reasonable decisions regarding clustering. One such example is to use Jackstraw plots (note this step takes some time to run) you want to look for an inflection point where there are big differences in the p-value.
+
 ```r
-# Determine dimensionality of dataset
+# Determine dimensionality of the dataset
 # NOTE: This process can take a long time for big datasets, comment out for expediency. More
 # approximate techniques such as those implemented in ElbowPlot() can be used to reduce
 # computation time
@@ -76,6 +88,9 @@ JackStrawPlot(pbmc, dims = 1:20)
 #OUTPUT
 ```
 ![](../../assets/images/jack.JPG)
+
+Similar to the jackstraw plot, we can also look at the pca elbow plot, which will help us understand how to decide which PCA to use. Here we use an inflection point or "elbow" to decide which pca to use.
+
 ```r
 # Visualize elbow plot of PC
 ElbowPlot(pbmc)
@@ -84,6 +99,8 @@ ElbowPlot(pbmc)
 ![](../../assets/images/elbow.JPG)
 
 ### STEP11 Batch correction using Harmony
+This is the most important yet challenging aspect. Batch correction. If your data are not appropriately batch corrected, you could make incorrect assumptions purely due to library composition bias or sequencing type, or even treatment in this case. We will demonstrate this later, but for now let's run Harmony to adjust for batch, using donor and stimulation metadata as covariates in our batch correction design model.
+
 ```r
 #Run Harmony batch correction with library and tissue source covariates
 pbmc <- RunHarmony(pbmc,
@@ -138,7 +155,12 @@ Warning: Invalid name supplied, making object name syntactically valid. New obje
 ```
 ![](../../assets/images/harmony.JPG)
 
-### STEP12 Non linear multidimensional projection using UMAP
+Congrats your objective function has converged! 
+
+### STEP12 Nonlinear multidimensional projection using UMAP
+
+Now we will perform hypergeometric multidimensional data projection, using UMAP. To read more about UMAP visit this [website](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html). 
+
 ```r
 # Run UMAP, on PCA NON-batch corrected data
 pbmc <- RunUMAP(pbmc, reduction = "pca", dims = 1:20, return.model = TRUE)
@@ -171,6 +193,8 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 #OUTPUT
 ```
 ![](../../assets/images/batcheffect.JPG)
+
+In the figure above, we are viewing what the data will look like if we *do not* perform batch correction via harmony. Notice how the two datasets although looking similar appear to be a reflection on one another. This demonstrates poor batch correction and needs to be accounted for. We will now correct this, using Harmony-corrected coordinates.
 ```r
 # Now run Harmony
 pbmc <- RunUMAP(pbmc, reduction = "harmony", dims = 1:20, return.model = TRUE)
@@ -202,7 +226,13 @@ DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 #OUTPUT
 ```
 ![](../../assets/images/umapcorr.JPG)
+
+Note in the plot above how cells from two treatments are intermixed, we have removed the batch effect due to treatment from this dataset.
+
 ### STEP13 Clustering
+
+Now we want to cluster our data, so that we can visualize various cell types.
+
 ```r
 # Algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
 pbmc <- pbmc %>% 
@@ -232,6 +262,9 @@ DimPlot(pbmc, reduction = "umap", label = TRUE)
 #OUTPUT
 ```
 ![](../../assets/images/umap2.JPG)
+
+Visualizing gene expression is the most basic yet intuitive method of allocating cellular identity, no one knows the biology of your cell type more than you, so use your cell type-specific markers to allocate notations on various clusters.
+
 ```r
 # Observe gene expression
 FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", "FCGR3A",
