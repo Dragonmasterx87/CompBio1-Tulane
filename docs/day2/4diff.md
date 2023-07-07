@@ -29,6 +29,8 @@ glm.fit: fitted probabilities numerically 0 or 1 occurred
 
 head(b.interferon.response, n = 15)
 ```
+We are now looking at the output of differentially expressed genes using the single cell statistical method
+
 ```r
 #OUTPUT
                 p_val avg_log2FC pct.1 pct.2     p_val_adj
@@ -48,6 +50,9 @@ IRF7    3.667981e-108  2.5623663 0.837 0.193 5.154613e-104
 HERC5    6.244788e-98  2.8136999 0.611 0.022  8.775800e-94
 UBE2L6   7.032047e-91  2.1202128 0.857 0.301  9.882136e-87
 ```
+
+Let's look at the gene expression of the top 2 candidate proteins, we can see that they are interferon response genes.
+
 ```r
 b.interferon.response <- dplyr::filter(b.interferon.response, p_val_adj < 5e-2)
 plots <- VlnPlot(pbmc, features = c("ISG15", "ISG20"), split.by = "stim", group.by = "celltype",
@@ -64,6 +69,9 @@ wrap_plots(plots = plots, ncol = 1)
 ![](../../assets/images/vlnplt3.JPG)
 
 ### STEP13B: Pseudobulk testing
+
+Pseudobulking is powerful. It allows one to remove the influence of library composition bias, as one aggregated read now represents the expression of one celltype across different donors. This analytical philosophy albeit more conservative, yields superior results with regards to reproducibility.
+
 ```r
 DefaultAssay(pbmc) <- "RNA"
 pbmc$celltype.stim.donor <- paste(pbmc$celltype, pbmc$stim, pbmc$donor, sep = "_")
@@ -287,6 +295,9 @@ UBE2L6  8.745682e-60   2.935460     1   1.0  1.229031e-55
 IFITM2  1.077820e-55   3.460921     1   1.0  1.514660e-51
 SAT1    1.858432e-55   2.519988     1   1.0  2.611655e-51
 ```
+
+Notice how some adj pvalues are 0? Thats because the value is lower than the smallest calculable value of R, we can see what is the smallest value R can calculate using the following function. Remember this will change based on the hardware you are using.
+
 ```r
 # Why is my adj pval 0?
 .Machine$double.xmin
