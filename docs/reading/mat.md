@@ -8,12 +8,12 @@ permalink: /docs/reading
 ---
 
 ### For reading more on R
-[R Programming for Data Science by Roger D. Peng](https://bookdown.org/rdpeng/rprogdatascience/)
-[Hands-On Programming with R by Garrett Grolemund](https://rstudio-education.github.io/hopr/index.html)
+[R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Roger D. Peng
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html) by Garrett Grolemund
 
 ### For reading up on Seurat
-[Seurat vignette](https://satijalab.org/seurat/)
-[Single cell RNA-seq analysis using Seurat](https://www.singlecellcourse.org/single-cell-rna-seq-analysis-using-seurat.html)
+[Seurat vignette](https://satijalab.org/seurat/) bt the Satija Lab
+[Single cell RNA-seq analysis using Seurat](https://www.singlecellcourse.org/single-cell-rna-seq-analysis-using-seurat.html) by the welcome sanger institute
 
 ### Open source 
 [HarvardX Biomedical Data Science Open Online Training](http://rafalab.dfci.harvard.edu/pages/harvardx.html) taught by Michael Love and Rafael Irizarry
