@@ -10,7 +10,7 @@ permalink: /docs/reading
 ### For reading more on R
 1. [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Roger D. Peng
 2. [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html) by Garrett Grolemund
-3. [Statistics and R](https://pll.harvard.edu/course/statistics-and-r)
+3. [Statistics and R](https://pll.harvard.edu/course/statistics-and-r) open access Harvard edX course
 
 ### For reading up on Seurat
 1. [Seurat vignette](https://satijalab.org/seurat/) bt the Satija Lab
