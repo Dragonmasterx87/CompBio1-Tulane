@@ -8,18 +8,19 @@ permalink: /docs/reading
 ---
 
 ### For reading more on R
-[R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Roger D. Peng
-[Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html) by Garrett Grolemund
+1. [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Roger D. Peng
+2. [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html) by Garrett Grolemund
+3. [Statistics and R](https://pll.harvard.edu/course/statistics-and-r)
 
 ### For reading up on Seurat
-[Seurat vignette](https://satijalab.org/seurat/) bt the Satija Lab
-[Single cell RNA-seq analysis using Seurat](https://www.singlecellcourse.org/single-cell-rna-seq-analysis-using-seurat.html) by the welcome sanger institute
+1. [Seurat vignette](https://satijalab.org/seurat/) bt the Satija Lab
+2. [Single cell RNA-seq analysis using Seurat](https://www.singlecellcourse.org/single-cell-rna-seq-analysis-using-seurat.html) by the welcome sanger institute
 
 ### Open source 
-[HarvardX Biomedical Data Science Open Online Training](http://rafalab.dfci.harvard.edu/pages/harvardx.html) taught by Michael Love and Rafael Irizarry
+1. [HarvardX Biomedical Data Science Open Online Training](http://rafalab.dfci.harvard.edu/pages/harvardx.html) taught by Michael Love and Rafael Irizarry
 
 ### Podcasts
-[Michael Love's](https://scholar.google.com/citations?hl=en&user=vzXv764AAAAJ&view_op=list_works) (Father of DESeq2) [interview on The Bioinformatics Chat](https://bioinformatics.chat/deseq2) A nice historical perspective of DESEq2
+1. [Michael Love's](https://scholar.google.com/citations?hl=en&user=vzXv764AAAAJ&view_op=list_works) (Father of DESeq2) [interview on The Bioinformatics Chat](https://bioinformatics.chat/deseq2) A nice historical perspective of DESEq2
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
