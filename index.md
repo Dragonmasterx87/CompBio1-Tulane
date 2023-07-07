@@ -3,6 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
+
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
 ### Introduction
 In this workshop attendees will learn the basics of scRNAseq experimental design. We will be using the Seurat package in R to analyze single cell RNA sequencing data.
@@ -32,7 +33,6 @@ workflow.
 
 ### Project
 In order to be eligible for the attendance certificate you must complete the project, dont worry at the end of this workshop you will be able to perform the necessry computation to complete this.
-
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
