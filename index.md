@@ -5,7 +5,9 @@ nav_order: 1
 ---
 
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
+
 ![](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/assets/images/logo.png)
+
 ### Introduction
 In this workshop attendees will learn the basics of scRNAseq experimental design. We will be using the Seurat package in R to analyze single cell RNA sequencing data.
 This workshop will outline the basics of R syntax and usage using R and the integrated developmental environment RStudio. This course is designed to be a basic introduction,
