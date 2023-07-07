@@ -29,16 +29,13 @@ Now in the tab above, add the title to the question you want to ask about. Try t
 
 Although this exercise may seem pointless to you now, almost 90% of coders use this method to troubleshoot and help others in their free time. So learning how to make a good reprex is essential if you are interested in anyone getting back and helping you in their free time. This same method can be used when you have advanced questions for the developers of other packages. For example, the Seurat GitHub has its own issues tab where thousands of issues can be found and many people attempt to answer them in their free time, not just the developers!
 
-###To read more about reprex check out these websites:
+### To read more about reprex check out these websites:
+1. Reprex by [EconomiCurtis](https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-create-one/5219)
+2. Reprex by [blogpost UV](https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/)
 
-Reprex by [EconomiCurtis](https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-create-one/5219)
+### Complex questions, the instructor won't/can't help, what do I do now?
 
-Reprex [blogpost UV](https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/)
-
-###Complex questions, the instructor won't/can't help, what do I do now?
 The last piece of advice regarding questions is to google it! There is a very large probability that the question you are facing has been someone else's problem too, and they have more than likely done the hard work and asked before you have! Always go to the "issues" tab in GitHub and search for your problem first, but if you can't seem to find it just google your question, more times than not, you will find a solution online. Othwersie great places to ask for help are the GitHub issues tabs for packages, [stack overflow](https://stackoverflow.com/), and [biostars](https://www.biostars.org/)
-
-
 
 ----
 
