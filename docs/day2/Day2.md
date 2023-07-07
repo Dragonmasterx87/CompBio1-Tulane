@@ -7,7 +7,7 @@ has_toc: false
 permalink: /docs/day2
 ---
 
-![image](../../assets/images/logo.png)
+![](../../assets/images/logo.png)
 
 ## Day 2:
 1. Data loading/QC/filtering
