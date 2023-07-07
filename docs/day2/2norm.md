@@ -6,8 +6,11 @@ parent: Day 2
 ---
 ## Normalization using VST
 ### STEP9 Data processing
+
+The first step in data processing is the process of normalization, in this case we are performing a log transformation of the data and scaling it to a factor of 10,000
+
 ```r
-# normalize and identify variable features for each dataset independently
+# Normalize and identify variable features for each dataset independently
 pbmc <- NormalizeData(pbmc, normalization.method = "LogNormalize", scale.factor = 10000)
 ```
 ```r
@@ -17,6 +20,9 @@ Performing log-normalization
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 ```
+
+Now we want to select for most variable features in our dataset, or in this instance the top 2000 most variable features.
+
 ```r
 # select highly variable features
 pbmc <- FindVariableFeatures(pbmc, selection.method = "vst", nfeatures = 2000)
@@ -54,6 +60,9 @@ Warning messages:
 2: Transformation introduced infinite values in continuous x-axis
 ```
 ![](../../assets/images/dispersion.JPG)
+
+Next, we are going to perform an action that scales and centers features in the dataset.
+
 ```r
 # Scale data
 all.genes <- rownames(pbmc)
