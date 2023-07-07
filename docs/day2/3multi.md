@@ -231,7 +231,7 @@ Note in the plot above how cells from two treatments are intermixed, we have rem
 
 ### STEP13 Clustering
 
-Now we want to cluster our data, so that we can visualize various cell types.
+Now we want to cluster our data, so that we can visualize various cell types. 
 
 ```r
 # Algorithm 3 is the smart local moving (SLM) algorithm https://link.springer.com/article/10.1140/epjb/e2013-40829-0
@@ -256,6 +256,9 @@ Maximum modularity in 10 random starts: 0.8967
 Number of communities: 14
 Elapsed time: 8 seconds
 ```
+
+Let's first see the data annotations based on Seurat's pre-computed information. Seurat uses its own methodology for dataset integration, so this is a good time to see if our batch correction matches theirs.
+
 ```r
 Idents(pbmc) <- "seurat_annotations"
 DimPlot(pbmc, reduction = "umap", label = TRUE)
@@ -272,6 +275,9 @@ FeaturePlot(pbmc, features = c("CD3D", "SELL", "CREM", "CD8A", "GNLY", "CD79A", 
 #OUTPUT
 ```
 ![](../../assets/images/geneexp1.JPG)
+
+Now based on this information, we want to go ahead and rename our clusters, matching gene expression based on known PBMC RNA expression.
+
 ```r
 # Rename clusters
 Idents(pbmc) <- "RNA_snn_res.0.5"
