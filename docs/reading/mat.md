@@ -2,7 +2,7 @@
 title: Reading Material
 layout: default
 nav_order: 4
-has_children: fasle
+has_children: false
 has_toc: false
 permalink: /docs/reading
 ---
