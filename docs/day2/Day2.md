@@ -7,7 +7,7 @@ has_toc: false
 permalink: /docs/day2
 ---
 
-![image](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/assets/images/logo.png)
+![image](../../assets/images/logo.png)
 
 ## Day 2:
 1. Data loading/QC/filtering
