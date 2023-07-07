@@ -25,7 +25,17 @@ Once we are in the issues tab, we can now very easily generate a question, by fi
 
 ![](../../assets/images/reprex4.JPG)
 
-Now in the tab above, add the title to the question you want to ask about. Try to be concise yet cover the gist of the problem you are facing, some examples are "problems running PCA", "running dimplot doesn't generate an output plot", and "harmony objective function won't converge". The next step is to add a short description of what you have been doing and the problem you have faced (replace the pre-existing text with your own), there's no need to add code here, just a verbal description describing your problem. In the next section, you should add your code. Surround your code using the grave accent ` this allows the code to be formatted in a manner allowing it to be formatted in a manner that makes it more readable. Now add your entire session info and also surround it with the grave accent. Once you have completed this process click on Preview and see if everything looks appropriate, if it does, the final step is to click on the wheel on the right side that says Label and select an appropriate label such as bug, documentation, etc. Finally, click on the green "submit new issue" button and you are good to go! If you realise after positing a problem that you made a mistake, don't worry you can edit your comment pretty easily, by clicking on the edit tab.
+Now in the tab above:
+1. Add the title to the question you want to ask about. Try to be concise yet cover the gist of the problem you are facing, some examples are "problems running PCA", "running dimplot doesn't generate an output plot", and "harmony objective function won't converge".
+2. The next step is to add a short description of what you have been doing and the problem you have faced (replace the pre-existing text with your own), there's no need to add code here, just a verbal description describing your problem.
+3. In the next section, you should add your code. Surround your code using the grave accent ` this allows the code to be formatted in a manner allowing it to be formatted in a manner that makes it more readable.
+4. Now add your entire session info and also surround it with the grave accent.
+5. Once you have completed this process click on Preview and see if everything looks appropriate.
+6. If everything looks good, then the final step is to click on the wheel on the right side that says *Label* and select an appropriate label such as bug, documentation, etc.
+7. Finally, click on the green "submit new issue" button and you are good to go!
+8. If you realize after positing a problem that you made a mistake, don't worry you can edit your comment pretty easily, by clicking on the *edit* tab.
+
+To learn more about how to edit a markdown file in GitHub, visit [this site](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
 Although this exercise may seem pointless to you now, almost 90% of coders use this method to troubleshoot and help others in their free time. So learning how to make a good reprex is essential if you are interested in anyone getting back and helping you in their free time. This same method can be used when you have advanced questions for the developers of other packages. For example, the Seurat GitHub has its own issues tab where thousands of issues can be found and many people attempt to answer them in their free time, not just the developers!
 
