@@ -27,6 +27,16 @@ Once we are in the issues tab, we can now very easily generate a question, by fi
 
 Now in the tab above, add the title to the question you want to ask about. Try to be concise yet cover the gist of the problem you are facing, some examples are "problems running PCA", "running dimplot doesn't generate an output plot", and "harmony objective function won't converge". The next step is to add a short description of what you have been doing and the problem you have faced (replace the pre-existing text with your own), there's no need to add code here, just a verbal description describing your problem. In the next section, you should add your code. Surround your code using the grave accent ` this allows the code to be formatted in a manner allowing it to be formatted in a manner that makes it more readable. Now add your entire session info and also surround it with the grave accent. Once you have completed this process click on Preview and see if everything looks appropriate, if it does, the final step is to click on the wheel on the right side that says Label and select an appropriate label such as bug, documentation, etc. Finally, click on the green "submit new issue" button and you are good to go!
 
+Although this exercise may seem pointless to you now, almost 90% of coders use this method to troubleshoot and help others in their free time. So learning how to make a good reprex is essential if you are interested in anyone getting back and helping you in their free time. This same method can be used when you have advanced questions for the developers of other packages. For example, the Seurat GitHub has its own issues tab where thousands of issues can be found and many people attempt to answer them in their free time, not just the developers!
+
+To read more about reprex check out these websites:
+Reprex by [EconomiCurtis](https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-create-one/5219)
+Reprex [blogpost UV](https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/)
+
+Now the last piece of advice regarding questions is to google it! There is a very large probability that the question you are facing has been someone else problem too, and they have more than likely done the hard work and asked before you have! Always go to "issues" tab in GitHub and search for your problem first, but if you can't seem to find it just google your question, more times than not, you will find a solution online. Othwersie great places to ask for help are the GitHub issues tabs for packages, [stack overflow](https://stackoverflow.com/), and [biostars](https://www.biostars.org/)
+
+
+
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
