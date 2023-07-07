@@ -1,5 +1,5 @@
 ---
-title: Help making a reprex
+title: Asking for help by making a reprex
 layout: default
 nav_order: 6
 parent: Day 2
