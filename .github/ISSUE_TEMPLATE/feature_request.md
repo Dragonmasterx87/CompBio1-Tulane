@@ -7,14 +7,14 @@ assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
+**What is the problem you are facing? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Now type in the code you have run, along with the error message**
+`Type your code surrounded by a grave accent`
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Now type in your session info, this is the output of the command sessionInfo in R**
+`paste your sessionInfo here`
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
