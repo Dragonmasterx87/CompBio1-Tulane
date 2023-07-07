@@ -11,10 +11,11 @@ parent: Day 2
 1. [Tulane School of Medicine](https://medicine.tulane.edu/)
 2. [Tulane Biomedical Science Graduate Program](https://medicine.tulane.edu/education/biomedical-sciences-graduate-program)
 3. [Franck Mauvais-Jarvis Lab](https://medicine.tulane.edu/diabetes-research-program/mauvais-jarvis-lab)
-4. Members of the [Rahul Satija](https://satijalab.org/) and [Tim Stuart](https://stuartlab.org/) labs for discussions and help.
-5. The maintainers of R, RStudio, Python, and C++ for their work which enables us to perform this analysis.
-6. 10X Genomics for making their PBMC data publicly available for analysis and tutorial purposes.
-7. The variety of packages used in this workshop, including Seurat, Harmony, and many others.
+4. [Sarah Lindsey Lab](https://lindseylab.tulane.edu/)
+5. Members of the [Rahul Satija](https://satijalab.org/) and [Tim Stuart](https://stuartlab.org/) labs for discussions and help.
+6. The maintainers of R, RStudio, Python, and C++ for their work which enables us to perform this analysis.
+7. 10X Genomics for making their PBMC data publicly available for analysis and tutorial purposes.
+8. The variety of packages used in this workshop, including Seurat, Harmony, and many others.
 
 ----
 
