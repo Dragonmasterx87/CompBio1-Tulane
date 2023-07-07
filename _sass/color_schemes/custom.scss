@@ -1,4 +1,3 @@
 // custom SCSS (or CSS) goes here
 $link-color: $blue-000;
-$code-background-color: #31343f; // OneDarkJekyll default for syntax-one-dark-vivid
-$code-linenumber-color: #dee2f7; // OneDarkJekyll .nf for syntax-one-dark-vivid
+$code-background-color: $grey-lt-000 !default;
