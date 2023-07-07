@@ -1,7 +1,7 @@
 title: CompBio-W1
 description: Welcome to the documentation for the Computation Biology 1 Workshop being held at Tulane University SOM.
 theme: just-the-docs
-color_scheme: light
+color_scheme: custom
 
 # For copy button on code
 enable_copy_code_button: true
