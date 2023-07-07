@@ -6,7 +6,10 @@ parent: Day 2
 ---
 ## Differential testing framework
 ### STEP13 Differential gene testing
-### STEP13A: Single cell gene testing
+
+Differential gene testing is a critical component of single-cell analysis. In the past people have used single-cell testing algorithms to look at differentially expressed genes, however, newer computational studies argue that pseduobulking counts across cell types and donors and then performing gene testing is perhaps more appropriate when discovering differentially expressed genes. To read more about this, review this paper by [Squair et al., 2021:Nature Communications](https://www.nature.com/articles/s41467-021-25960-2). However based on the design of the experiment and the cutoffs, both can yield reproducible data, at least for highly differential genes, for genes with high variance, perhaps pseudobulk methods are more reliable.
+
+### STEP13A: Single-cell gene testing
 ```r
 # In order to fine DE genes its important to annotate cells,
 # this is where metadata comes to be important
