@@ -11,6 +11,7 @@ permalink: /docs/day2
 
 ![](https://raw.githubusercontent.com/Dragonmasterx87/CompBio1-Tulane/main/assets/images/logo.png)
 
+### Learning Outline:
 ### Day 2:
 1. Data loading/QC/filtering
 2. Normalization using VST and SC Transform
