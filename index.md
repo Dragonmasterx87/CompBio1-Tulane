@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
+## Welcome to the Computational Biology Workshop 1 (CBW1)
 
 ![](https://raw.githubusercontent.com/Dragonmasterx87/CompBio1-Tulane/main/assets/images/logo.png)
 
