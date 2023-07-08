@@ -16,6 +16,7 @@ parent: Day 2
 6. The maintainers of R, RStudio, Python, and C++ for their work which enables us to perform this analysis.
 7. 10X Genomics for making their PBMC data publicly available for analysis and tutorial purposes.
 8. The variety of packages used in this workshop, including Seurat, Harmony, and many others.
+9. Just The Docs creators and developers for help and creating the core code on which this website runs.
 
 ----
 
