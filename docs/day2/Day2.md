@@ -7,9 +7,9 @@ has_toc: false
 permalink: /docs/day2
 ---
 
-![](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/logo.png)
+# Welcome to DAY2 of the Computational Biology 1 Workshop (CB1W)!
 
-![](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/assets/images/logo.png)
+![](https://raw.githubusercontent.com/Dragonmasterx87/CompBio1-Tulane/main/assets/images/logo.png)
 
 ## Day 2:
 1. Data loading/QC/filtering
