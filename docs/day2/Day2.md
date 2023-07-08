@@ -7,11 +7,11 @@ has_toc: false
 permalink: /docs/day2
 ---
 
-# Welcome to DAY2 of the Computational Biology 1 Workshop (CB1W)
+## Welcome to DAY2 of the Computational Biology 1 Workshop (CB1W)
 
 ![](https://raw.githubusercontent.com/Dragonmasterx87/CompBio1-Tulane/main/assets/images/logo.png)
 
-## Day 2:
+### Day 2:
 1. Data loading/QC/filtering
 2. Normalization using VST and SC Transform
 3. Multidimensional reduction and cell clustering
