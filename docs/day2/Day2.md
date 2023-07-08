@@ -7,7 +7,7 @@ has_toc: false
 permalink: /docs/day2
 ---
 
-# Welcome to DAY2 of the Computational Biology 1 Workshop (CB1W)!
+# Welcome to DAY2 of the Computational Biology 1 Workshop (CB1W)
 
 ![](https://raw.githubusercontent.com/Dragonmasterx87/CompBio1-Tulane/main/assets/images/logo.png)
 
