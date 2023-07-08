@@ -6,23 +6,21 @@ nav_order: 1
 
 ## Welcome to the Computational Biology Workshop 1 (CBW1) workspace
 
-![](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/logo.png)
-
-![](https://github.com/Dragonmasterx87/CompBio1-Tulane/blob/main/assets/images/logo.png)
+![](https://raw.githubusercontent.com/Dragonmasterx87/CompBio1-Tulane/main/assets/images/logo.png)
 
 ### Introduction
-In this workshop attendees will learn the basics of scRNAseq experimental design. We will be using the Seurat package in R to analyze single cell RNA sequencing data.
+In this workshop, attendees will learn the basics of scRNAseq experimental design. We will be using the Seurat package in R to analyze single-cell RNA sequencing data.
 This workshop will outline the basics of R syntax and usage using R and the integrated developmental environment RStudio. This course is designed to be a basic introduction,
 where the fundamentals of scRNAseq analysis will be outlined. 
 
 ### Prerequisites
-_Nulla scientia necessaria_. It is expected that you have no prior coding eperience and want to learn how to analyze scRNAseq data from scratch, if you have coding experience then
+_Nulla scientia necessaria_. It is expected that you have no prior coding experience and want to learn how to analyze scRNAseq data from scratch, if you have coding experience then
 this course may act as a refresher to go over the basic workflow of Seurat. It is advised to bring your own laptop with a functional operating system so that you may follow the instructor's
 workflow.
 
 ### Learning Outline
 ### Day 1
-1. Introduction to single cell RNA sequencing
+1. Introduction to single-cell RNA sequencing
 2. Experimental design
 3. Comparison of library preparation and sequencing platforms
 4. Overview of single-cell analysis using Seurat
