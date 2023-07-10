@@ -1,8 +1,10 @@
 ---
 title: Acknowledgments
 layout: default
-nav_order: 7
-parent: Day 2
+nav_order: 5
+has_children: false
+has_toc: false
+permalink: /docs/acknowledgments
 ---
 ### This course is made in conjunction with funding made available from:
 1. This course has been made available thanks to funding from The [Tulane Center for Excellence: Sex-Based Biology and Medicine](https://sbm.tulane.edu/)
