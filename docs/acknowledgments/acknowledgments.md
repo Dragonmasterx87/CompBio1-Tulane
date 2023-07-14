@@ -12,7 +12,7 @@ permalink: /docs/acknowledgments
 ### Funding and support:
 1. This course has been made available thanks to funding from The [Tulane Center for Excellence: Sex-Based Biology and Medicine](https://sbm.tulane.edu/) and [Tulane Biomedical Science Graduate Program](https://medicine.tulane.edu/education/biomedical-sciences-graduate-program).
 
-### The instructor and would like to thank
+### Acknowledgments
 1. [Tulane School of Medicine](https://medicine.tulane.edu/)
 2. [Tulane Biomedical Science Graduate Program](https://medicine.tulane.edu/education/biomedical-sciences-graduate-program)
 3. [Dr. Franck Mauvais-Jarvis Lab](https://medicine.tulane.edu/diabetes-research-program/mauvais-jarvis-lab)
