@@ -1,14 +1,14 @@
 ---
-title: Simulator
+title: Extra
 layout: default
 nav_order: 6
 has_children: false
 has_toc: false
-permalink: /docs/simulator
+permalink: /docs/extras
 ---
 ### Need to de-stress?
 1. Try out this [PhD simulator](https://research.wmz.ninja/projects/phd/index.html) by [Dr. Mianzhi Wang](https://research.wmz.ninja/)
-2. If yoga is for you then try [these techniques](https://sites.tufts.edu/asegrad/2019/01/02/stress-relieving-yoga-practice-for-grad-students/) designed for graduate students by Tuft's University.
+2. If yoga is for you then try [these techniques](https://sites.tufts.edu/asegrad/2019/01/02/stress-relieving-yoga-practice-for-grad-students/) designed for graduate students in a blog by Tuft's University.
 
 ----
 
