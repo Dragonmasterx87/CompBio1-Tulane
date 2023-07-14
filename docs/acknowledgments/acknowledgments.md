@@ -9,7 +9,7 @@ permalink: /docs/acknowledgments
 ### Course design
 1. This course was created in 2023 in order to demonstrate complex sc-analysis workflows for bench scientists and trainees at the Tulane School of Medicine. This course was initially conceived, designed, and conducted by [Dr. Fahd Qadir](https://fahdqadir.phd.sh/), a post-doctoral fellow in Dr. Franck Mauvais Jarvis's Lab at Tulane University School of Medicine. We hope that this course will act as a template for future generations of post-doctoral fellows and scientists to utilize in order to train the next generation of trainees at the Tulane School of Medicine.
 
-### This course is made in conjunction with funding made available from:
+### Funding and support:
 1. This course has been made available thanks to funding from The [Tulane Center for Excellence: Sex-Based Biology and Medicine](https://sbm.tulane.edu/) and [Tulane Biomedical Science Graduate Program](https://medicine.tulane.edu/education/biomedical-sciences-graduate-program).
 
 ### The instructor and would like to thank
