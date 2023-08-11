@@ -76,12 +76,18 @@ Let's look at the gene expression of the top 2 candidate proteins, we can see th
 b.interferon.response <- dplyr::filter(b.interferon.response, p_val_adj < 5e-2)
 plots <- VlnPlot(pbmc, features = c("ISG15", "ISG20"), split.by = "stim", group.by = "celltype",
                  pt.size = 0, combine = FALSE)
+```
+```r
+#OUTPUT
 The default behaviour of split.by has changed.
 Separate violin plots are now plotted side-by-side.
 To restore the old behaviour of a single split violin,
 set split.plot = TRUE.
       
 This message will be shown once per session.
+```
+```r
+# Run plotting function
 wrap_plots(plots = plots, ncol = 1)
 #OUTPUT
 ```
