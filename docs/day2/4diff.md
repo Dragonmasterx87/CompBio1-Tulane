@@ -38,6 +38,8 @@ b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL
                                      logfc.threshold = 0.5849, #~1.5FC
                                      only.pos = TRUE,
                                      verbose = FALSE)
+# Got the DE test to run for your project? WOOHOO GREAT JOB!!! I knew you could do it!!
+# If you couldn't DON'T WORRY, create an issue on GitHub and I will get back to you asap!!
 ```
 ```r
 # Output
