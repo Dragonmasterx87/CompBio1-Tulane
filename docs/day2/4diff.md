@@ -14,6 +14,15 @@ Differential gene testing is a critical component of single-cell analysis. In th
 # In order to fine DE genes its important to annotate cells,
 # this is where metadata comes to be important
 # Our first method employs single cell differential gene expression using LR
+# First lets save celltype info from active.idents into a metadata slot called celltype
+pbmc$celltype <- pbmc@active.ident
+
+# Lets check the clusters
+table(pbmc$celltype)
+
+# Now lets make a new metadata slot containing both peices of information, celltype and stimulation with interferon
+# In order to do this we need to take data from two slots 1) pbmc$celltype and 2) pbmc$stim
+# We will store this data in a new metadata slot called celltype.stim
 pbmc$celltype.stim <- paste(pbmc$celltype, pbmc$stim, sep = "_")
 Idents(pbmc) <- "celltype.stim"
 b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL",
@@ -24,9 +33,14 @@ b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL
                                      logfc.threshold = 0.5849, #~1.5FC
                                      only.pos = TRUE,
                                      verbose = FALSE)
+```
+```r
+# Output
 Warning message:
 glm.fit: fitted probabilities numerically 0 or 1 occurred 
-
+```
+```r
+# Lets check head of data
 head(b.interferon.response, n = 15)
 ```
 We are now looking at the output of differentially expressed genes using the single cell statistical method
