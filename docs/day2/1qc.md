@@ -30,7 +30,10 @@ BiocManager::install("dittoSeq")
 remotes::install_github("cran/spatstat.core")
 remotes::install_version(package = 'Seurat', version = package_version('4.3.0'))
 
-# Install a tutorial data library, if you cant access dont worry I have a backup
+# If you are having a recurrent issue with installation just use the following:
+install.packages("Seurat")
+
+# Install a tutorial data library, if you can't access don't worry you can just skip this code, install harmony load packages (STEP2) and then move to STEP3B
 devtools::install_github("satijalab/seurat-data", ref = 'develop', force = TRUE)
 
 # Install Harmony https://www.nature.com/articles/s41592-019-0619-0
