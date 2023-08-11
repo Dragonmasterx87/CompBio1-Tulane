@@ -149,6 +149,7 @@ Adding metadata to your Seurat object is fundamental. This is how you can intera
 data to plot and analyze.
 ```r
 # This code has been updated based on changes we made during the course (8/11/2023)
+# Lets make 2x lists called ctrl.split and stim.split
 ctrl.split <- list("ctrl.d1" = ctrl.d1, "ctrl.d2" = ctrl.d2, "ctrl.d3" = ctrl.d3, "ctrl.d4" = ctrl.d4)
 stim.split <- list("stim.d1" = stim.d1, "stim.d2" = stim.d2, "stim.d3" = stim.d3, "stim.d4" = stim.d4)
 
