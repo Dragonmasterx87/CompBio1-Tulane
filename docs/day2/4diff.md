@@ -24,8 +24,13 @@ table(pbmc$celltype)
 # In order to do this we need to take data from two slots 1) pbmc$celltype and 2) pbmc$stim
 # We will store this data in a new metadata slot called celltype.stim
 pbmc$celltype.stim <- paste(pbmc$celltype, pbmc$stim, sep = "_")
+
+# Now lets load this metadata in the active directory of seurat, so that seurat will pull this metadata by default
 Idents(pbmc) <- "celltype.stim"
-b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL",
+
+# Now lets run differential analysis
+# HINT: Note that the ident.1 and ident.2 terms reside in pbmc$celltype.stim. maybe run table(pbmc$celltype.stim) to see a list of terms?
+b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL", # these are the two cell types/clusters that you want to run a DE test across. ident.2 is your control
                                      slot = 'data',
                                      test.use = "LR",
                                      min.pct = 0.1,
