@@ -30,7 +30,9 @@ Idents(pbmc) <- "celltype.stim"
 
 # Now lets run differential analysis
 # HINT: Note that the ident.1 and ident.2 terms reside in pbmc$celltype.stim. maybe run table(pbmc$celltype.stim) to see a list of terms?
-b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL", # these are the two cell types/clusters that you want to run a DE test across. ident.2 is your control
+# If you cant complete all the steps to get here, thats okay! I have a seurat object called PBMC saved in a shared folder in a sub-folder called: \seuratobjects
+# Just download that object and use qread or readRDS to load your object into R
+b.interferon.response <- FindMarkers(pbmc, ident.1 = "B_STIM", ident.2 = "B_CTRL", # These are the two cell types/clusters that you want to run a DE test across. ident.2 is your control
                                      slot = 'data',
                                      test.use = "LR",
                                      min.pct = 0.1,
