@@ -191,6 +191,9 @@ Using method 'umap'
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 12:48:46 Optimization finished
+```
+```r
+# Lets look at the batch effect when we don't integrate our data
 DimPlot(pbmc, reduction = 'umap', label = FALSE, pt.size = 2, raster=TRUE)
 #OUTPUT
 ```
