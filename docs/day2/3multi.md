@@ -77,6 +77,8 @@ determining clustering in your sc data can be very complex. We can use some intu
 # computation time
 pbmc <- JackStraw(pbmc, num.replicate = 100)
 pbmc <- ScoreJackStraw(pbmc, dims = 1:20)
+
+# When I say comment out that means use # because whenever # is present that peice of syntax will not run in R, R will assume its just a comment/annotation
 ```
 ```r
 #OUTPUT
