@@ -10,8 +10,7 @@ permalink: /docs/reading
 ### For reading more on R
 1. [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Roger D. Peng
 2. [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html) by Garrett Grolemund
-3. [Statistics and R](https://pll.harvard.edu/course/statistics-and-r) open access Harvard edX course
-4. [R Without Statistics](https://book.rwithoutstatistics.com/index.html)
+3. [R Without Statistics](https://book.rwithoutstatistics.com/index.html)
 
 ### For reading up on Seurat
 1. [Seurat vignette](https://satijalab.org/seurat/) bt the Satija Lab
@@ -19,6 +18,7 @@ permalink: /docs/reading
 
 ### Open source 
 1. [HarvardX Biomedical Data Science Open Online Training](http://rafalab.dfci.harvard.edu/pages/harvardx.html) taught by Michael Love and Rafael Irizarry
+2. [Statistics and R](https://pll.harvard.edu/course/statistics-and-r) open access Harvard edX course
 
 ### Podcasts
 1. [Michael Love's](https://scholar.google.com/citations?hl=en&user=vzXv764AAAAJ&view_op=list_works) (Father of DESeq2) [interview](https://bioinformatics.chat/deseq2) on [The Bioinformatics Chat](https://bioinformatics.chat/) A nice historical perspective of DESEq2
