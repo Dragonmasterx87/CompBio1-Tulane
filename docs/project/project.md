@@ -19,6 +19,7 @@ Once you have completed these tasks email the instructor your R script and notif
 Good luck!
 
 As of 8/14/2023 Number of people who have successfully completed this project: 2
+As of 8/14/2023 Number of people who have successfully completed the survey: 7
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
