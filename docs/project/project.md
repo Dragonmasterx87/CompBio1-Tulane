@@ -18,6 +18,8 @@ Once you have completed these tasks email the instructor your R script and notif
 
 Good luck!
 
+Number of people who have successfully completed this project: 1
+
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [GitHub Pages]: https://docs.github.com/en/pages
