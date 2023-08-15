@@ -22,7 +22,7 @@ Good luck!
 
 As of 8/14/2023 Number of people who have successfully completed this project: 2
 
-As of 8/14/2023 Number of people who have successfully completed the survey: 7
+As of 8/14/2023 Number of people who have successfully completed the survey: 8
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
