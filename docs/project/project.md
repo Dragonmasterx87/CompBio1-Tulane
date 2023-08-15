@@ -13,6 +13,7 @@ permalink: /docs/project
 ### For the second part of the survey solve this problem:
 Find the top 10 differentially expressed genes when comparing dendritic cells (DC) treated with Interferon-Gamma, to untreated controls.
 Share your code as an R script and the top 10 most differentially expressed genes. You may look anywhere on the Internet for help or even ask questions on GitHub, but please do not share solutions with one another.
+Data can be found here [LINK TO DATA](https://tulane.box.com/s/7bs56dhan7ajhoj7suyjzo45t46e59rs)
 
 *Final date of submission 8/21/2023*
 
