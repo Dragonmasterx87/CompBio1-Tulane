@@ -15,15 +15,15 @@ Find the top 10 differentially expressed genes when comparing dendritic cells (D
 Share your code as an R script and the top 10 most differentially expressed genes. You may look anywhere on the Internet for help or even ask questions on GitHub, but please do not share solutions with one another.
 Data can be found here [LINK TO DATA](https://tulane.box.com/s/7bs56dhan7ajhoj7suyjzo45t46e59rs)
 
-*Final date of submission 8/21/2023*
+*Final date of submission 8/21/2023 NOW EXTENDED TO 8/28/2023*
 
 Once you have completed these tasks email the instructor your R script and notification that you have completed the survey, and we will contact you for certificate pickup.
 
 Good luck!
 
-As of 8/16/2023 Number of people who have successfully completed this project: 3
+As of 8/20/2023 Number of people who have successfully completed this project: 4
 
-As of 8/16/2023 Number of people who have successfully completed the survey: 13
+As of 8/20/2023 Number of people who have successfully completed the survey: 14
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
