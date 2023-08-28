@@ -167,6 +167,21 @@ ifnb.list[["stim.d3"]]$donor <- "d3"
 ifnb.list[["stim.d4"]]$donor <- "d4"
 ```
 
+OR
+
+```r
+# If you are just loading data from your saved file and dont have a saved ifnb.list object
+ctrl.d1$donor <- "d1"
+ctrl.d2$donor <- "d2"
+ctrl.d3$donor <- "d3"
+ctrl.d4$donor <- "d4"
+
+stim.d1$donor <- "d1"
+stim.d2$donor <- "d2"
+stim.d3$donor <- "d3"
+stim.d4$donor <- "d4"
+```
+
 ### STEP6 Create a unified list, remember object name comes first in list notation
 Here we are just creating one list of objects, click on ifnb.list in the Global Environment, what information do you see?
 ```r
