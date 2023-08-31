@@ -21,9 +21,9 @@ Once you have completed these tasks email the instructor your R script and notif
 
 Good luck!
 
-As of 8/24/2023 Number of people who have successfully completed this project: 8 (36.3% of class)
+As of 8/31/2023 Number of people who have successfully completed this project: 8 (36.3% of class)
 
-As of 8/24/2023 Number of people who have successfully completed the survey: 17 (77.2% of class)
+As of 8/31/2023 Number of people who have successfully completed the survey: 17 (77.2% of class)
 
 ----
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
