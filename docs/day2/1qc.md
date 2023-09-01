@@ -20,6 +20,7 @@ install.packages("patchwork")
 install.packages("devtools")
 install.packages("qs")
 devtools::install_github("gaospecial/ggVennDiagram")
+install.packages("ggvenn")
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -40,7 +41,8 @@ devtools::install_github("satijalab/seurat-data", ref = 'develop', force = TRUE)
 # https://github.com/immunogenomics/harmony
 install.packages("harmony")
 
-# STEP2 Now load packages
+# STEP2 Now load packages, are these all the packages you will need?
+# I guess we will see!
 suppressPackageStartupMessages({
   library(dplyr)
   library(Rcpp)
